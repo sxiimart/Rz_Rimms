@@ -1,0 +1,2269 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portofolio</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+
+    <link
+      rel="apple-touch-icon-precomposed"
+      sizes="57x57"
+      href="ico/apple-touch-icon-57x57.png"
+    />
+    <link
+      rel="apple-touch-icon-precomposed"
+      sizes="114x114"
+      href="ico/apple-touch-icon-114x114.png"
+    />
+    <link
+      rel="apple-touch-icon-precomposed"
+      sizes="72x72"
+      href="ico/apple-touch-icon-72x72.png"
+    />
+    <link
+      rel="apple-touch-icon-precomposed"
+      sizes="144x144"
+      href="ico/apple-touch-icon-144x144.png"
+    />
+    <link
+      rel="apple-touch-icon-precomposed"
+      sizes="60x60"
+      href="ico/apple-touch-icon-60x60.png"
+    />
+    <link
+      rel="apple-touch-icon-precomposed"
+      sizes="120x120"
+      href="ico/apple-touch-icon-120x120.png"
+    />
+    <link
+      rel="apple-touch-icon-precomposed"
+      sizes="76x76"
+      href="ico/apple-touch-icon-76x76.png"
+    />
+    <link
+      rel="apple-touch-icon-precomposed"
+      sizes="152x152"
+      href="ico/apple-touch-icon-152x152.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="ico/favicon-196x196.png"
+      sizes="196x196"
+    />
+    <link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="favicon-128.png" sizes="128x128" />
+    <meta name="application-name" content="&nbsp;" />
+    <meta name="msapplication-TileColor" content="#FFFFFF" />
+    <meta name="msapplication-TileImage" content="mstile-144x144.png" />
+    <meta name="msapplication-square70x70logo" content="mstile-70x70.png" />
+    <meta name="msapplication-square150x150logo" content="mstile-150x150.png" />
+    <meta name="msapplication-wide310x150logo" content="mstile-310x150.png" />
+    <meta name="msapplication-square310x310logo" content="mstile-310x310.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Acme&family=Angkor&family=Bungee+Shade&family=Caveat:wght@700&family=Chango&family=Edu+NSW+ACT+Foundation:wght@600&family=Ibarra+Real+Nova&family=Noto+Serif&family=Open+Sans:wght@700&family=Rampart+One&family=Rowdies&display=swap&family=Barlow&family=Oswald:wght@500&display=swap&family=Abyssinica+SIL&family=Alkalami&family=Poppins:wght@900&family=Open+Sans:wght@700"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"
+    />
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              bluee: "#0E3EDA",
+              blueee: "#0099ff",
+              biru: "#144272",
+              biruu: "#242F9B",
+            },
+            fontFamily: {
+              sinica: ["Abyssinica SIL"],
+              noto: ["Noto Serif"],
+              pop: ["Poppins"],
+              acme: ["Acme"],
+              rowdies: ["Rowdies"],
+            },
+          },
+        },
+      };
+    </script>
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+    />
+
+    <style>
+      .sun-icon {
+        display: inline;
+      }
+      .moon-icon {
+        display: none;
+      }
+      .dark .moon-icon {
+        display: inline;
+      }
+      .dark .sun-icon {
+        display: none;
+      }
+      .light .sun-icon {
+        display: inline;
+      }
+      .light .moon-icon {
+        display: none;
+      }
+    </style>
+
+    <script>
+      (function () {
+        const theme = localStorage.getItem("theme");
+        const themeIcon = document.getElementById("themeIcon");
+        const themePath = document.getElementById("themePath");
+
+        if (theme === "dark") {
+          document.documentElement.classList.add("dark");
+        } else {
+          document.documentElement.classList.remove("dark");
+        }
+      })();
+    </script>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/10.12.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.4/firebase-database.js"></script>
+
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-app.js";
+      import {
+        getDatabase,
+        ref,
+        push,
+        onValue,
+      } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-database.js";
+
+      // Your web app's Firebase configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyBdSlCBmsD9gCrOKQZl0WtCubwUjgSlTS0",
+        authDomain: "komentar-b407d.firebaseapp.com",
+        databaseURL: "https://komentar-b407d-default-rtdb.firebaseio.com",
+        projectId: "komentar-b407d",
+        storageBucket: "komentar-b407d.appspot.com",
+        messagingSenderId: "368560886850",
+        appId: "1:368560886850:web:0e69e6cc105ec162b8c9db",
+        measurementId: "G-DPD22B3N1N",
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const db = getDatabase(app);
+    </script>
+
+    <script type="module">
+      // Import fungsi-fungsi yang dibutuhkan dari SDK Firebase
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-app.js";
+      import {
+        getDatabase,
+        ref,
+        push,
+        onChildAdded,
+        query,
+        orderByChild,
+      } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-database.js";
+
+      // Konfigurasi Firebase web app
+      const firebaseConfigg = {
+        apiKey: "AIzaSyBdSlCBmsD9gCrOKQZl0WtCubwUjgSlTS0",
+        authDomain: "komentar-b407d.firebaseapp.com",
+        databaseURL: "https://komentar-b407d-default-rtdb.firebaseio.com",
+        projectId: "komentar-b407d",
+        storageBucket: "komentar-b407d.appspot.com",
+        messagingSenderId: "368560886850",
+        appId: "1:368560886850:web:0e69e6cc105ec162b8c9db",
+        measurementId: "G-DPD22B3N1N",
+      };
+
+      // Inisialisasi Firebase
+      const apps = initializeApp(firebaseConfigg);
+      const dbs = getDatabase(apps);
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const nameInput = document.getElementById("name-input");
+        const emailInput = document.getElementById("email-input");
+        const commentInput = document.getElementById("comment-input");
+        const submitButton = document.getElementById("submit-comment");
+        const commentsContainer = document.getElementById("comments-container");
+
+        // Dapatkan articleId dari URL
+        const articleId = window.location.pathname
+          .split("/")
+          .pop()
+          .replace(".html", "");
+
+        if (!articleId) {
+          Swal.fire({
+            icon: "error",
+            title: "Error!",
+            text: "ID artikel tidak ketemu.",
+          });
+          return;
+        }
+
+        function tambahKomentarKeDOM(comment) {
+          const commentElement = document.createElement("div");
+          commentElement.className =
+            "bg-white p-4 rounded-md shadow-md mb-4 relative f h";
+          commentElement.innerHTML = `
+              <div class="flex items-center mb-2 f h">
+                  <img src="${
+                    comment.avatar
+                  }" alt="Profile" class="w-10 h-10 rounded-full mr-3">
+                  <div>
+                      <h3 class="font-semibold">${comment.name}</h3>
+                      <p class="text-sm text-gray-500">${formatTimestamp(
+                        comment.timestamp
+                      )}</p>
+                  </div>
+              </div>
+              <p>${comment.text}</p>
+          `;
+          // Tambahkan komentar baru ke atas
+          commentsContainer.prepend(commentElement);
+        }
+
+        function formatTimestamp(timestamp) {
+          const now = new Date().getTime();
+          const diff = now - timestamp;
+          const seconds = Math.floor(diff / 1000);
+          const minutes = Math.floor(seconds / 60);
+          const hours = Math.floor(minutes / 60);
+          const days = Math.floor(hours / 24);
+
+          if (seconds < 60) return "Baru saja";
+          if (minutes < 60) return `${minutes} menit yang lalu`;
+          if (hours < 24) return `${hours} jam yang lalu`;
+          return `${days} hari yang lalu`;
+        }
+
+        function generateAvatar(email) {
+          const hash = email.trim().toLowerCase();
+          return `https://api.multiavatar.com/${hash}.svg`;
+        }
+
+        submitButton.addEventListener("click", () => {
+          const name = nameInput.value.trim();
+          const email = emailInput.value.trim();
+          const commentText = commentInput.value.trim();
+
+          if (!name || !email || !commentText) {
+            Swal.fire({
+              icon: "error",
+              title: "Harap isi semua bidang.",
+              text: "Pastikan kamu mengisi nama, email, dan pesan.",
+            });
+            return;
+          }
+
+          if (
+            !/^[A-Za-z\s]{1,50}$/.test(name) ||
+            !/^.{1,500}$/.test(commentText)
+          ) {
+            Swal.fire({
+              icon: "error",
+              title: "Harap isi yang sesuai.",
+              text: "Nama hanya boleh berisi huruf dan spasi (maksimal 50 karakter). Pesan maksimal 500 karakter.",
+            });
+            return;
+          }
+
+          // Validasi email menggunakan regex untuk memeriksa domain lengkap
+          const emailRegex = /^[^\s@]+@(gmail\.com|yahoo\.com)$/i;
+
+          if (!emailRegex.test(email)) {
+            Swal.fire({
+              icon: "error",
+              title: "Email tidak valid.",
+              text: "Harap masukkan email yang valid (gmail.com atau yahoo.com).",
+            });
+            return;
+          }
+
+          // Sanitasi sederhana
+          const sanitizedComment = commentText
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;");
+
+          // Generate URL avatar unik dengan gambar default
+          const avatar = generateAvatar(email);
+
+          const newComment = {
+            name: name,
+            email: email,
+            text: sanitizedComment,
+            timestamp: new Date().getTime(),
+            avatar: avatar,
+          };
+
+          push(ref(dbs, `comments/${articleId}`), newComment)
+            .then(() => {
+              nameInput.value = "";
+              emailInput.value = "";
+              commentInput.value = "";
+              Swal.fire({
+                icon: "success",
+                title: "Sukses!",
+                text: "Komentar kamu udah ditambahkan.",
+              });
+            })
+            .catch((error) => {
+              Swal.fire({
+                icon: "error",
+                title: "Error!",
+                text: "Terjadi kesalahan saat menambahkan komentar.",
+              });
+            });
+        });
+
+        // Pantau penambahan komentar baru dan tampilkan di bagian atas
+        const commentsRef = query(
+          ref(dbs, `comments/${articleId}`),
+          orderByChild("timestamp")
+        );
+        onChildAdded(commentsRef, (snapshot) => {
+          const comment = snapshot.val();
+          tambahKomentarKeDOM(comment);
+        });
+      });
+    </script>
+  </head>
+
+  <body class="bg-blue-100">
+    <header
+      class="text-gray-100 p-6 shadow-md shadow-blue-400 fixed top-0 w-full z-50 h-16 flex items-center"
+      id="header"
+    >
+      <div class="container mx-auto flex justify-between items-center">
+        <div class="judul -ml-4 sm:-ml-1">
+          <a href="home.html" class="v flex items-center mt-2"
+            ><img src="img/44.png" class="h-14 w-14 -mt-2" /><b class="mr-1"
+              >SX</b
+            >iimart<span id="site-name" class="mt-1">.com</span></a
+          >
+        </div>
+        <nav class="md:bg-transparent">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between md:h-16 p-3 md:p-0">
+              <div class="sm:flex">
+                <div
+                  class="hidden md:ml-6 md:flex md:items-center md:space-x-8 da"
+                >
+                  <a
+                    href="home.html"
+                    class="text-white hover:bg-blue-400 px-3 py-2 rounded-md text-md font-sinica"
+                    >Home</a
+                  >
+                  <a
+                    href="blog.html"
+                    class="text-white hover:bg-blue-400 px-3 py-2 rounded-md text-md font-sinica"
+                    >Artikel</a
+                  >
+                  <a
+                    href="about-me.html"
+                    class="text-white hover:bg-blue-400 px-3 py-2 rounded-md text-md font-sinica"
+                    >About
+                  </a>
+                  <a
+                    href="contact.html"
+                    class="text-white hover:bg-blue-400 px-3 py-2 rounded-md text-md font-sinica"
+                    >Contact</a
+                  >
+                </div>
+              </div>
+              <div class="flex items-center ml-4 mt-1 sm:mt-0">
+                <div class="responsive-container">
+                  <div
+                    id="themeToggle"
+                    class="toggle-container shadow-lg -mr-1"
+                  >
+                    <svg
+                      id="themeIcon"
+                      class="toggle-icon sun-icon"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        id="themePath"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M12 2v2m0 16v2m8.485-8.485l-1.414 1.414m-11.314 0l-1.414-1.414M22 12h-2M4 12H2m16.485-8.485l-1.414 1.414M5.515 5.515L4.1 4.1M12 4a8 8 0 100 16 8 8 0 000-16z"
+                      />
+                    </svg>
+                  </div>
+                  <div class="-mr-2 flex md:hidden">
+                    <button
+                      type="button"
+                      class="items-center justify-center rounded-md text-gray-400 hover:text-gray-500 focus:outline-none ml-2"
+                      aria-expanded="false"
+                      id="mobileMenuButton"
+                    >
+                      <svg
+                        class="w-7 h-7 text-white"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        aria-hidden="true"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="3"
+                          d="M4 6h16M4 12h16M4 18h16"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="md:hidden hidden font-sinica absolute inset-x-0 top-16 bg-blue-400 z-50 w-full da"
+            id="mobileMenu"
+          >
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+              <a
+                href="home.html"
+                class="text-blue-100 hover:bg-blue-600 w-[80px] text-center hover:text-white block font-sinica px-3 py-6 rounded-md text-base font-medium"
+                >Home</a
+              >
+              <a
+                href="blog.html"
+                class="text-blue-100 hover:bg-blue-600 w-[80px] text-center hover:text-white block font-sinica px-3 py-6 rounded-md text-base font-medium"
+                >Artikel</a
+              >
+              <a
+                href="about-me.html"
+                class="text-blue-100 hover:bg-blue-600 w-[80px] text-center hover:text-white block font-sinica px-3 py-6 rounded-md text-base font-medium"
+                >About
+              </a>
+              <a
+                href="contact.html"
+                class="text-blue-100 hover:bg-blue-600 w-[80px] text-center hover:text-white block font-sinica px-3 py-6 rounded-md text-base font-medium"
+                >Contact</a
+              >
+              <h2 class="text-xl font-bold text-white text-center md:hidden">
+                My Medsos
+              </h2>
+              <div class="flex items-center justify-center pt-2 md:hidden">
+                <a
+                  href="https://web.facebook.com/saragih.simarmata.169"
+                  target="_blank"
+                  class="mr-2 w-[35px] h-[35px] bg-slate-100 border border-slate-300 shadow-md rounded-full flex justify-center items-center hover:opacity-50"
+                  ><svg
+                    role="img"
+                    width="25"
+                    class="fill-current"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <title>Facebook</title>
+                    <path
+                      d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
+                      class="text-bluee"
+                    /></svg
+                ></a>
+
+                <a
+                  href="https://www.instagram.com/___rimms/"
+                  target="_blank"
+                  class="mr-2 w-[35px] h-[35px] bg-slate-100 border border-slate-300 shadow-md rounded-full flex justify-center items-center hover:opacity-50"
+                  ><svg
+                    role="img"
+                    width="25"
+                    class="fill-current"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <title>Instagram</title>
+                    <path
+                      d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"
+                      class="text-bluee"
+                    /></svg
+                ></a>
+
+                <a
+                  href="https://wa.me/6285362695904"
+                  target="_blank"
+                  class="mr-2 w-[35px] h-[35px] bg-slate-100 border border-slate-300 shadow-md rounded-full flex justify-center items-center hover:opacity-50"
+                  ><svg
+                    role="img"
+                    width="25"
+                    class="fill-current"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <title>WhatsApp</title>
+                    <path
+                      d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"
+                      class="text-bluee"
+                    /></svg
+                ></a>
+
+                <a
+                  href="https://twitter.com/KarimSimarmata"
+                  target="_blank"
+                  class="mr-2 w-[35px] h-[35px] bg-slate-100 border border-slate-300 shadow-md rounded-full flex justify-center items-center hover:opacity-50"
+                  ><svg
+                    role="img"
+                    width="25"
+                    class="fill-current"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <title>Twitter</title>
+                    <path
+                      d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"
+                      class="text-bluee"
+                    /></svg
+                ></a>
+              </div>
+              <div class="judul -ml-4 sm:-ml-1">
+                <a
+                  href="home.html"
+                  class="v flex items-center mt-2 justify-center"
+                  ><img src="img/44.png" class="h-16 w-16 -mt-2" /><b
+                    class="mr-1"
+                    >SX</b
+                  >iimart<span id="site-name" class="mt-1">.com</span></a
+                >
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <div class="custom-bg bg-cover bg-center">
+      <div
+        class="container mx-auto flex flex-col lg:flex-row justify-between items-center py-12 relative mt-20 sm:px-10 mage"
+      >
+        <div
+          class="lg:w-[1000px] sm:pr-10 mb-8 lg:mb-0 px-4 sm:px-0 -mt-16 sm:mt-10"
+        >
+          <h2
+            class="text-4xl mt-10 sm:mt-0 font-pop bg-gradient-to-t from-blue-100 to-blue-100 bg-clip-text text-transparent sm:text-6xl"
+          >
+            <b
+              id=""
+              class="text-lg font-pop bg-gradient-to-t from-biruu to-blueee bg-clip-text text-transparent assemble-animation dark:text-blueee"
+              >Hallo Semuanya🖐✋, Saya</b
+            >
+            <span
+              class="mt-2 text-4xl font-pop bg-gradient-to-t from-biruu to-blueee bg-clip-text text-transparent sm:text-6xl assemble-animation w-full g"
+              >Karim
+              <span class="text-4xl font-pop text-blueee sm:text-6xl"
+                >Saragih</span
+              >
+              <span
+                class="text-4xl font-pop bg-gradient-to-t from-biruu to-blueee bg-clip-text text-transparent sm:text-6xl g"
+                >Simarmata</span
+              ></span
+            >
+          </h2>
+          <h3
+            class="text-blueee sm:mt-2 font-rowdies text-xl mt-3 font-semibold zoom-effect h"
+          >
+            And I'm a
+            <span
+              id="animated-text"
+              class="font-rowdies text-2xl bg-gradient-to-t from-biruu to-blueee bg-clip-text text-transparent z"
+              >Programmer</span
+            >
+          </h3>
+          <p
+            class="text-slate-500 font-sinica text-sm mt-7 font-semibold zoom-effect h"
+          >
+            welcome to my website SXiimart.com dan Portofolio, Project, tentang
+            saya dan juga artikel pribadi saya.
+          </p>
+          <div class="mt-5 sm:mt-3 flex justify-center zoom-effect">
+            <a
+              href="blog.html"
+              class="font-pop font-bold text-lg hover:opacity-60 bg-white shadow-lg shadow-blueee p-2 px-6 rounded-xl transform transition-transform duration-300 hover:scale-125 hover:shadow-fb"
+              ><span
+                class="bg-gradient-to-b from-slate-900 to-blueee bg-clip-text text-transparent"
+                >Telusuri Artikel</span
+              ></a
+            >
+          </div>
+        </div>
+
+        <header
+          class="lg:w-full w-full relative overflow-hidden flex flex-wrap justify-center items-center"
+        >
+          <!-- Swiper -->
+          <div class="swiper-container h-full">
+            <div class="swiper-wrapper mt-6">
+              <!-- Slide 1 -->
+              <div
+                class="swiper-slide relative h-56 sm:hidden bg-cover bg-no-repeat bg-center assemble-animation zoom-in"
+                style="background-image: url('img/xe.png')"
+              >
+                <div
+                  class="relative flex flex-col items-center justify-center h-full text-center"
+                ></div>
+              </div>
+              <!-- Slide 2 -->
+              <div
+                class="swiper-slide relative h-56 sm:hidden bg-cover bg-no-repeat bg-center assemble-animation zoom-in"
+                style="background-image: url('img/bbm.jpeg')"
+              >
+                <div
+                  class="relative flex flex-col items-center justify-center h-full text-center"
+                ></div>
+              </div>
+              <!-- Slide 3 -->
+              <div
+                class="swiper-slide relative h-56 sm:hidden bg-cover bg-no-repeat bg-center assemble-animation zoom-in"
+                style="background-image: url('img/ren.jpg')"
+              >
+                <div
+                  class="relative flex flex-col items-center justify-center h-full text-center"
+                ></div>
+              </div>
+              <!-- Slide 4 -->
+              <div
+                class="swiper-slide relative h-56 sm:hidden bg-cover bg-no-repeat bg-center assemble-animation zoom-in"
+                style="background-image: url('img/aas.jpeg')"
+              >
+                <div
+                  class="relative flex flex-col items-center justify-center h-full text-center"
+                ></div>
+              </div>
+              <!-- Slide 5 -->
+              <div
+                class="swiper-slide mt-8 relative h-56 sm:hidden bg-cover bg-no-repeat bg-center assemble-animation zoom-in"
+                style="background-image: url('img/1.png')"
+              >
+                <div
+                  class="relative flex flex-col items-center justify-center h-full text-center"
+                ></div>
+              </div>
+              <!-- Slide 6 -->
+              <div
+                class="swiper-slide relative h-56 sm:hidden bg-cover bg-no-repeat bg-center assemble-animation zoom-in -mt-1"
+                style="background-image: url('img/mn.jpg')"
+              >
+                <div
+                  class="relative flex flex-col items-center justify-center h-full text-center"
+                ></div>
+              </div>
+            </div>
+          </div>
+          <!-- Add Pagination -->
+          <div class="swiper-pagination custom-pagination"></div>
+        </header>
+      </div>
+    </div>
+
+    <div class="container mx-auto py-6 -mt-10 sm:mt-0 o">
+      <div
+        class="flex flex-col lg:flex-row items-center rounded-lg overflow-hidden justify-center mx-auto"
+      >
+        <div class="lg:w-1/3 w-full order-2 sm:order-1" data-aos="fade-right">
+          <div class="rotate-animation relative">
+            <img
+              src="img/abo.png"
+              alt="about Image"
+              class="object-cover w-96 h-96 mx-auto"
+            />
+            <div class="orbit">
+              <div class="bubble"><img src="img/bb.png" alt="" /></div>
+              <div class="bubble"></div>
+              <div class="bubble"><img src="img/bb.png" alt="" /></div>
+              <div class="bubble"></div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="lg:w-1/2 w-full p-6 order-1 sm:order-2 sm:text-center lg:text-start text-start"
+          data-aos="fade-left"
+        >
+          <h1
+            class="text-4xl font-arial font-bold mb-4 bg-gradient-to-t from-biruu to-blueee bg-clip-text text-transparent"
+          >
+            About Me
+          </h1>
+
+          <h2
+            class="font-arial -mt-4 text-xl font-bold mb-4 bg-gradient-to-t from-biruu to-blueee bg-clip-text text-transparent z"
+          >
+            Front end Development
+          </h2>
+          <div class="container mx-auto py-4">
+            <div class="flex flex-col space-y-4">
+              <div class="bg-slate-200 shadow-md shadow-blueee rounded p-4 f">
+                <div class="flex items-center mb-2">
+                  <svg
+                    id="Layer_1"
+                    style="enable-background: new 0 0 100.4 100.4"
+                    version="1.1"
+                    fill="currentColor"
+                    viewBox="0 0 100.4 100.4"
+                    xml:space="preserve"
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    class="h-10 w-10 mr-2"
+                  >
+                    <g>
+                      <path
+                        d="M92.9,60.4l-7.4-5v-15l7.4-4.9c0.4-0.3,0.7-0.7,0.7-1.2c0-0.5-0.3-1-0.7-1.2L54.8,7.5c-0.5-0.3-1.2-0.3-1.7,0L6.1,38.9   c-0.2,0.1-0.3,0.2-0.4,0.4c0,0,0,0,0,0.1c-0.2,0.3-0.2,0.5-0.2,0.8v27.5c0,0.5,0.3,1,0.7,1.2l38.1,25.4c0.3,0.2,0.5,0.3,0.8,0.3   c0.3,0,0.6-0.1,0.8-0.3l47.1-31.4c0.4-0.3,0.7-0.7,0.7-1.2C93.6,61.1,93.3,60.6,92.9,60.4z M54,10.6l35.4,23.6L83.6,38   c-0.3,0.1-0.6,0.3-0.8,0.5L45,63.7L16.6,44.8c-0.1-0.1-0.2-0.1-0.2-0.2l-6.8-4.5L54,10.6z M17.1,48.8l27,18c0.5,0.3,1.2,0.3,1.7,0   l36.7-24.5v12.3L45.2,79.2l-28.1-18L17.1,48.8L17.1,48.8z M45,91.2L8.4,66.8V43l5.8,3.8V62c0,0.5,0.3,1,0.7,1.3l29.6,19   c0.2,0.2,0.5,0.2,0.8,0.2c0.3,0,0.6-0.1,0.8-0.2l37.4-24.6l5.9,4L45,91.2z"
+                      />
+                      <path
+                        d="M47.5,24.3l17.8,12.2c0.3,0.2,0.6,0.3,0.8,0.3c0.5,0,0.9-0.2,1.2-0.7c0.5-0.7,0.3-1.6-0.4-2.1L49.2,21.8   c-0.7-0.5-1.6-0.3-2.1,0.4C46.6,22.9,46.8,23.8,47.5,24.3z"
+                      />
+                    </g>
+                  </svg>
+                  <h2
+                    class="font-bold text-grey-900 text-lg sm:text-xl md:text-2xl z"
+                  >
+                    Education
+                  </h2>
+                </div>
+                <p class="text-grey-600 font-sinica">
+                  - I have been learning on my own for approximately 2 years.
+                </p>
+              </div>
+
+              <div class="bg-slate-200 shadow-md shadow-blueee rounded p-4 f">
+                <div class="flex items-center mb-2">
+                  <svg
+                    viewBox="0 0 64 64"
+                    fill="currentColor"
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-10 w-10 mr-2"
+                  >
+                    <title />
+                    <g id="Productivity">
+                      <path
+                        d="M12,22H4a1,1,0,0,0-1,1V47a1,1,0,0,0,1,1h8a1,1,0,0,0,1-1V23A1,1,0,0,0,12,22ZM11,46H5V24h6Z"
+                      />
+                      <path
+                        d="M26,16H18a1,1,0,0,0-1,1V47a1,1,0,0,0,1,1h8a1,1,0,0,0,1-1V17A1,1,0,0,0,26,16ZM25,46H19V18h6Z"
+                      />
+                      <path
+                        d="M41,31V27a1,1,0,0,0-1-1H32a1,1,0,0,0-1,1V47a1,1,0,0,0,1,1h6.25V46H33V28h6v3Z"
+                      />
+                      <path
+                        d="M47,13h6V29.6h2V12a1,1,0,0,0-1-1H46a1,1,0,0,0-1,1V28.17h2Z"
+                      />
+                      <path
+                        d="M51,33A10,10,0,1,0,61,43,10,10,0,0,0,51,33Zm3.29,14.71-4-4A1,1,0,0,1,50,43V37h2v5.59l3.71,3.7Z"
+                      />
+                    </g>
+                  </svg>
+                  <h2
+                    class="font-bold text-gray-900 text-lg sm:text-xl md:text-2xl z"
+                  >
+                    Experience
+                  </h2>
+                </div>
+                <p class="text-grey-600 font-sinica">
+                  - i'm a web development for 1/2 years.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <p class="text-grey-600 font-sinica">
+            Hello! I'm KARIM, a Programmer, my passion is computer. That's it.
+          </p>
+          <div class="flex space-x-4 mt-4 sm:justify-center lg:justify-start">
+            <!-- Facebook -->
+            <a
+              href="https://web.facebook.com/saragih.simarmata.169/"
+              target="_blank"
+              class="text-blue-600 transform transition-transform duration-300 hover:scale-125 hover:shadow-fb"
+            >
+              <svg class="w-8 h-8" fill="#0099ff" viewBox="0 0 24 24">
+                <path
+                  d="M22.675 0h-21.35C.593 0 0 .593 0 1.326v21.348C0 23.407.593 24 1.326 24H12.81v-9.294H9.692V11.08h3.117V8.412c0-3.1 1.894-4.786 4.662-4.786 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.505 0-1.795.715-1.795 1.764v2.314h3.587l-.467 3.627h-3.12V24h6.116c.733 0 1.326-.593 1.326-1.326V1.326C24 .593 23.407 0 22.675 0z"
+                />
+              </svg>
+            </a>
+            <!-- Instagram -->
+            <a
+              href="https://www.instagram.com/___rimms/"
+              target="_blank"
+              class="transform transition-transform duration-300 hover:scale-125 hover:shadow-ig"
+            >
+              <svg class="w-8 h-8" viewBox="0 0 24 24">
+                <defs>
+                  <linearGradient id="IGGradient" x1="100%" y1="100%">
+                    <stop offset="0%" stop-color="#f09433" />
+                    <stop offset="25%" stop-color="#e6683c" />
+                    <stop offset="50%" stop-color="#dc2743" />
+                    <stop offset="75%" stop-color="#cc2366" />
+                    <stop offset="100%" stop-color="#bc1888" />
+                  </linearGradient>
+                </defs>
+                <path
+                  fill="url(#IGGradient)"
+                  d="M12 2.163c3.204 0 3.584.012 4.849.07 1.366.062 2.633.345 3.608 1.32.975.975 1.258 2.243 1.32 3.608.058 1.265.07 1.645.07 4.849s-.012 3.584-.07 4.849c-.062 1.366-.345 2.633-1.32 3.608-.975.975-2.243 1.258-3.608 1.32-1.265.058-1.645.07-4.849.07s-3.584-.012-4.849-.07c-1.366-.062-2.633-.345-3.608-1.32-.975-.975-1.258-2.243-1.32-3.608C2.175 15.584 2.163 15.204 2.163 12s.012-3.584.07-4.849c.062-1.366.345-2.633 1.32-3.608C4.528 2.675 5.795 2.392 7.161 2.33 8.426 2.272 8.806 2.163 12 2.163zm0-2.163C8.748 0 8.332.015 7.052.073 5.773.132 4.643.358 3.653.893 2.681 1.411 1.93 2.163 1.412 3.136.878 4.126.652 5.256.593 6.536.535 7.815.52 8.231.52 12s.015 4.185.073 5.464c.059 1.28.285 2.41.82 3.401.518.973 1.27 1.725 2.242 2.242.991.535 2.121.761 3.401.82 1.279.058 1.695.073 5.464.073s4.185-.015 5.464-.073c1.28-.059 2.41-.285 3.401-.82.973-.518 1.725-1.27 2.242-2.242.535-.991.761-2.121.82-3.401.058-1.279.073-1.695.073-5.464s-.015-4.185-.073-5.464c-.059-1.28-.285-2.41-.82-3.401-.518-.973-1.27-1.725-2.242-2.242-.991-.535-2.121-.761-3.401-.82C15.584.015 15.168 0 12 0zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162 0 3.403 2.759 6.162 6.162 6.162 3.403 0 6.162-2.759 6.162-6.162 0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.206 0-4-1.794-4-4 0-2.206 1.794-4 4-4 2.206 0 4 1.794 4 4 0 2.206-1.794 4-4 4zm6.406-11.845c0 .796-.645 1.441-1.441 1.441-.796 0-1.441-.645-1.441-1.441 0-.796.645-1.441 1.441-1.441.796 0 1.441.645 1.441 1.441z"
+                />
+              </svg>
+            </a>
+            <!-- Twitter -->
+            <a
+              href="https://twitter.com/KarimSimarmata"
+              target="_blank"
+              class="text-blue-400 transform transition-transform duration-300 hover:scale-125 hover:shadow-tw"
+            >
+              <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M23.954 4.569c-.885.389-1.83.654-2.825.775 1.014-.608 1.793-1.574 2.163-2.723-.951.555-2.005.959-3.127 1.184-.897-.955-2.178-1.55-3.594-1.55-2.717 0-4.92 2.203-4.92 4.917 0 .39.045.765.127 1.124-4.087-.205-7.713-2.162-10.141-5.138-.422.725-.664 1.562-.664 2.457 0 1.69.86 3.183 2.168 4.058-.798-.025-1.549-.245-2.205-.608v.06c0 2.362 1.68 4.336 3.911 4.781-.409.111-.839.171-1.282.171-.314 0-.615-.03-.911-.086.631 1.956 2.445 3.379 4.604 3.417-1.684 1.318-3.808 2.105-6.102 2.105-.396 0-.788-.023-1.177-.069 2.179 1.397 4.768 2.211 7.548 2.211 9.055 0 14.002-7.496 14.002-13.986 0-.21 0-.423-.015-.633.961-.695 1.8-1.562 2.462-2.549z"
+                />
+              </svg>
+            </a>
+            <!-- WhatsApp -->
+            <a
+              href="https://api.whatsapp.com/send?phone=6285362695904"
+              target="_blank"
+              class="text-green-500 transform transition-transform duration-300 hover:scale-125 hover:shadow-wa"
+            >
+              <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M12.004 2c-5.514 0-9.996 4.482-9.996 9.996 0 1.761.46 3.472 1.338 4.993l-1.396 5.148 5.144-1.395c1.522.878 3.234 1.337 4.995 1.337 5.514 0 9.996-4.482 9.996-9.996 0-5.514-4.482-9.996-9.996-9.996zm0 18.658c-1.553 0-3.058-.422-4.363-1.217l-.311-.184-3.056.829.823-3.055-.201-.324c-.801-1.292-1.225-2.783-1.225-4.328 0-4.458 3.626-8.084 8.083-8.084 4.457 0 8.083 3.626 8.083 8.084s-3.626 8.084-8.083 8.084zm4.449-6.403c-.245-.122-1.453-.718-1.677-.799-.225-.081-.389-.122-.554.123-.162.244-.633.799-.777.963-.143.162-.287.182-.532.061-.245-.122-1.034-.38-1.968-1.21-.728-.649-1.22-1.451-1.365-1.696-.143-.244-.015-.376.108-.498.111-.111.245-.286.367-.429.122-.143.162-.244.244-.406.081-.163.041-.305-.02-.427-.061-.122-.554-1.336-.758-1.828-.204-.49-.41-.423-.554-.423-.142 0-.306-.02-.469-.02s-.427.061-.652.305c-.225.245-.859.84-.859 2.038 0 1.198.879 2.357 1.001 2.519.122.163 1.728 2.634 4.186 3.692.586.245 1.045.39 1.401.529.589.186 1.125.16 1.548.097.471-.071 1.453-.594 1.657-1.169.204-.574.204-1.067.143-1.169-.061-.101-.204-.163-.428-.286z"
+                />
+              </svg>
+            </a>
+            <!-- LinkedIn -->
+            <a
+              href="https://www.linkedin.com/in/sxiimart-rz-087280318/"
+              target="_blank"
+              class="text-blue-700 transform transition-transform duration-300 hover:scale-125 hover:shadow-li"
+            >
+              <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M22.23 0H1.77C.79 0 0 .78 0 1.75v20.5C0 23.22.79 24 1.77 24H22.23c.98 0 1.77-.78 1.77-1.75V1.75C24 .78 23.21 0 22.23 0zM7.09 20.45H3.56V9H7.09v11.45zM5.33 7.58c-1.14 0-1.88-.74-1.88-1.68 0-.96.74-1.68 1.9-1.68 1.16 0 1.88.72 1.88 1.68 0 .94-.72 1.68-1.9 1.68h-.02zm15.12 12.87h-3.52V14.9c0-1.41-.49-2.37-1.72-2.37-.94 0-1.49.65-1.74 1.27-.09.21-.11.51-.11.81v5.84h-3.51s.05-9.48 0-10.45h3.51v1.48c.47-.73 1.3-1.78 3.16-1.78 2.3 0 4.03 1.5 4.03 4.72v6.03z"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="py-20">
+      <div class="container mx-auto text-center">
+        <h2 class="font-pop text-2xl text-blueee text-center py-8">Project</h2>
+        <p
+          class="text-sm font-sinica text-slate-500 text-center mx-10 sm:mx-3 -mt-7 g"
+        >
+          @Project I Created
+        </p>
+        <div class="flex flex-wrap gap-9 justify-center mt-10">
+          <div
+            class="p-8 bg-slate-100 rounded-lg shadow-lg shadow-blueee w-80 md:w-1/4 lg:w-96 flex-shrink-0 f project-card"
+            data-aos="fade-up"
+          >
+            <h3
+              class="text-xl font-bold mb-4 font-sanserif bg-gradient-to-t from-biruu to-blueee bg-clip-text text-transparent z"
+            >
+              Sensor Suhu
+            </h3>
+            <img
+              src="img/d.png"
+              alt="Suhu Image"
+              class="mb-4 w-full h-44 object-cover shadow-md shadow-blueee"
+            />
+            <p class="font-sinica text-gray-600 h">
+              Project membuat sensor suhu dengan Internet of Things (IoT).
+            </p>
+          </div>
+          <div
+            class="project-card p-8 bg-slate-100 rounded-lg shadow-lg shadow-blueee w-80 md:w-1/4 lg:w-96 flex-shrink-0 f"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <h3
+              class="text-xl font-bold mb-4 font-sanserif bg-gradient-to-t from-biruu to-blueee bg-clip-text text-transparent z"
+            >
+              Sensor BBM Tangki
+            </h3>
+            <img
+              src="img/b.jpeg"
+              alt="Tangki Image"
+              class="mb-4 w-full h-44 object-cover shadow-md"
+            />
+            <p class="font-sinica text-gray-600 h">
+              Project membuat Sensor Volume tangki BBM dengan Internet of Things
+              (IoT) .
+            </p>
+          </div>
+          <div
+            class="project-card p-8 bg-slate-100 rounded-lg shadow-lg shadow-blueee w-80 md:w-1/4 lg:w-96 flex-shrink-0 f"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <h3
+              class="text-xl font-bold mb-4 font-sanserif bg-gradient-to-t from-biruu to-blueee bg-clip-text text-transparent z"
+            >
+              My First Website
+            </h3>
+            <img
+              src="img/c.png"
+              alt="Feature 3 Image"
+              class="mb-4 w-full h-44 object-cover shadow-md"
+            />
+            <p class="font-sinica text-gray-600 h">
+              Website Portofolio Pertama yang di publish.
+            </p>
+          </div>
+          <div
+            class="project-card p-8 bg-slate-100 rounded-lg shadow-lg shadow-blueee w-80 md:w-1/4 lg:w-96 flex-shrink-0 f"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <h3
+              class="text-xl font-bold mb-4 font-sanserif bg-gradient-to-t from-biruu to-blueee bg-clip-text text-transparent z"
+            >
+              Artikel
+            </h3>
+            <img
+              src="img/5.jpg"
+              alt="Feature 3 Image"
+              class="mb-4 w-full h-44 object-cover shadow-md"
+            />
+            <p class="font-sinica text-gray-600 h">
+              Sebuah media memperdalam IT, edukasi, dan untuk pemberitahuan
+              tentang alam, pemikiran dan lain sebagainya.
+            </p>
+          </div>
+          <div
+            class="project-card p-8 bg-slate-100 rounded-lg shadow-lg shadow-blueee w-80 md:w-1/4 lg:w-96 flex-shrink-0 f"
+            data-aos="fade-up"
+            data-aos-delay="400"
+          >
+            <h3
+              class="text-xl font-bold mb-4 font-sanserif bg-gradient-to-t from-biruu to-blueee bg-clip-text text-transparent z"
+            >
+              Web E-Commerce
+            </h3>
+            <img
+              src="img/7.jpg"
+              alt="Feature 3 Image"
+              class="mb-4 w-full h-44 object-cover shadow-md"
+            />
+            <p class="font-sinica text-gray-600 h">
+              Website penjualan produk online.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="py-10 bg-blue-200 t">
+      <div class="container mx-auto px-4">
+        <h2 class="font-pop text-2xl text-blueee text-center py-8">
+          Job Partners
+        </h2>
+        <p
+          class="text-sm font-sinica text-slate-500 text-center mx-10 sm:mx-3 -mt-7 h"
+        >
+          @Our Partners in Enterprise
+        </p>
+
+        <section class="no-overflow">
+          <div
+            class="flex flex-wrap lg:flex-nowrap justify-center items-center gap-6"
+          >
+            <div
+              id="zoomable-4"
+              class="zoomable text-center w-full lg:w-1/4"
+              data-aos="fade-left"
+              data-aos-delay="100"
+            >
+              <img
+                src="img/02.png"
+                alt="Partner 1 Logo"
+                class="mx-auto -mb-4 sm:mb-4 max-w-full lg:h-40 sm:h-1/4 h-60 scale-90"
+              />
+            </div>
+            <div
+              id="zoomable-5"
+              class="zoomable text-center w-full lg:w-1/4"
+              data-aos="fade-left"
+              data-aos-delay="200"
+            >
+              <img
+                src="img/01.png"
+                alt="Partner 2 Logo"
+                class="mx-auto mb-4 max-w-full lg:h-32 sm:h-1/4 h-48 scale-90"
+              />
+            </div>
+            <div
+              id="zoomable-6"
+              class="zoomable text-center w-full lg:w-1/4"
+              data-aos="fade-left"
+              data-aos-delay="300"
+            >
+              <img
+                src="img/00.png"
+                alt="Partner 3 Logo"
+                class="mx-auto mb-4 max-w-full lg:h-28 sm:h-1/4 h-36 scale-75"
+              />
+            </div>
+            <div
+              id="zoomable-7"
+              class="zoomable text-center w-full lg:w-1/4"
+              data-aos="fade-left"
+              data-aos-delay="400"
+            >
+              <img
+                src="img/03.png"
+                alt="Partner 4 Logo"
+                class="mx-auto mb-4 max-w-full lg:h-32 sm:h-1/4 h-64 scale-90"
+              />
+            </div>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <section>
+      <div class="container mx-auto mt-14">
+        <h2 class="font-pop text-2xl text-blueee text-center py-8">Skills</h2>
+        <p
+          class="text-sm font-sinica text-slate-500 text-center mx-10 sm:mx-3 -mt-7 h"
+        >
+          @My skills in program language
+        </p>
+
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-14"
+          style="scroll-behavior: smooth"
+          data-aos=""
+          data-aos-delay="100"
+          data-aos-duration="1000"
+        >
+          <!-- HTML -->
+          <div
+            class="skill-card p-6 rounded-full w-80 sm:w-full mx-auto text-center"
+            data-aos="zoom-in"
+          >
+            <img
+              src="img/html.png"
+              alt="HTML Logo"
+              class="w-20 h-12 mx-auto mb-4"
+            />
+            <h2 class="text-xl font-semibold font-sinica mb-4 x1 a">HTML</h2>
+            <!-- HTML -->
+            <div class="progress-container html" id="progress-bar-html">
+              <div class="progress-bar" id="progress-html"></div>
+            </div>
+            <div
+              class="ml-4 text-md progress-percentage x1"
+              id="progress-html-text"
+            >
+              0%
+            </div>
+          </div>
+          <!-- JavaScript -->
+          <div
+            class="skill-card p-6 rounded-full w-80 sm:w-full mx-auto text-center"
+            data-aos="zoom-in"
+          >
+            <img
+              src="img/js.png"
+              alt="JavaScript Logo"
+              class="w-24 h-12 mx-auto mb-4"
+            />
+            <h2 class="text-xl font-semibold font-sinica mb-4 x2">
+              JavaScript
+            </h2>
+            <div class="progress-container javascript" id="progress-bar-js">
+              <div class="progress-bar" id="progress-js"></div>
+            </div>
+            <div
+              class="ml-4 text-md progress-percentage x2"
+              id="progress-js-text"
+            >
+              0%
+            </div>
+          </div>
+          <!-- CSS -->
+          <div
+            class="skill-card p-6 rounded-full w-80 sm:w-full mx-auto text-center"
+            data-aos="zoom-in"
+          >
+            <img
+              src="img/css.png"
+              alt="CSS Logo"
+              class="w-24 h-12 mx-auto mb-4"
+            />
+            <h2 class="text-xl font-semibold font-sinica mb-4 x3 y">CSS</h2>
+            <div class="progress-container css y" id="progress-bar-css">
+              <div class="progress-bar y" id="progress-css"></div>
+            </div>
+            <div
+              class="ml-4 text-md progress-percentage x3 y"
+              id="progress-css-text"
+            >
+              0%
+            </div>
+          </div>
+          <!-- Python -->
+          <div
+            class="skill-card p-6 rounded-full w-80 sm:w-full mx-auto text-center"
+            data-aos="zoom-in"
+          >
+            <img
+              src="img/python.png"
+              alt="Python Logo"
+              class="w-12 h-12 mx-auto mb-4"
+            />
+            <h2 class="text-xl font-semibold font-sinica mb-4 x4">Python</h2>
+            <div class="progress-container python" id="progress-bar-python">
+              <div class="progress-bar" id="progress-python"></div>
+            </div>
+            <div
+              class="ml-4 text-md progress-percentage x4"
+              id="progress-python-text"
+            >
+              0%
+            </div>
+          </div>
+          <!-- C++ -->
+          <div
+            class="skill-card p-6 rounded-full w-80 sm:w-full mx-auto text-center"
+            data-aos="zoom-in"
+          >
+            <img
+              src="img/cplus.png"
+              alt="C++ Logo"
+              class="w-12 h-12 mx-auto mb-4"
+            />
+            <h2 class="text-xl font-semibold font-sinica mb-4 x5">C++</h2>
+            <div class="progress-container cpp" id="progress-bar-cpp">
+              <div class="progress-bar" id="progress-cpp"></div>
+            </div>
+            <div
+              class="ml-4 text-md progress-percentage x5"
+              id="progress-cpp-text"
+            >
+              0%
+            </div>
+          </div>
+          <!-- Tailwind CSS -->
+          <div
+            class="skill-card p-6 rounded-full w-80 sm:w-full mx-auto text-center"
+            data-aos="zoom-in"
+          >
+            <img
+              src="img/tail.png"
+              alt="Tailwind CSS Logo"
+              class="w-12 h-12 mx-auto mb-4"
+            />
+            <h2 class="text-xl font-semibold font-sinica mb-4 x6">
+              Tailwind CSS
+            </h2>
+            <div class="progress-container tailwind" id="progress-bar-tailwind">
+              <div class="progress-bar" id="progress-tailwind"></div>
+            </div>
+            <div
+              class="ml-4 text-md progress-percentage x6"
+              id="progress-tailwind-text"
+            >
+              0%
+            </div>
+          </div>
+          <!-- Next.js -->
+          <div
+            class="skill-card p-6 rounded-full w-80 sm:w-full mx-auto text-center"
+            data-aos="zoom-in"
+          >
+            <img
+              src="img/php.png"
+              alt="PHP Logo"
+              class="w-16 h-12 mx-auto mb-4"
+            />
+            <h2 class="text-xl font-semibold font-sinica mb-4 x7">PHP</h2>
+            <div class="progress-container php" id="progress-bar-php">
+              <div class="progress-bar" id="progress-php"></div>
+            </div>
+            <div
+              class="ml-4 text-md progress-percentage x7"
+              id="progress-php-text"
+            >
+              0%
+            </div>
+          </div>
+          <!-- React.js -->
+          <div
+            class="skill-card p-6 rounded-full w-80 sm:w-full mx-auto text-center"
+            data-aos="zoom-in"
+          >
+            <img
+              src="img/react.png"
+              alt="React.js Logo"
+              class="w-12 h-12 mx-auto mb-4"
+            />
+            <h2 class="text-xl font-semibold font-sinica mb-4 x8">React.js</h2>
+            <div class="progress-container react" id="progress-bar-react">
+              <div class="progress-bar" id="progress-react"></div>
+            </div>
+            <div
+              class="ml-4 text-md progress-percentage x8"
+              id="progress-react-text"
+            >
+              0%
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- section tiga -->
+    <svg
+      width="100%"
+      height="100%"
+      id="svg"
+      viewBox="0 0 1440 390"
+      xmlns="http://www.w3.org/2000/svg"
+      class="transition duration-300 ease-in-out delay-150 -mb-5 sm:-mb-16 lg:-mb-28"
+    >
+      <style>
+        .path-0 {
+          animation: pathAnim-0 4s;
+          animation-timing-function: linear;
+          animation-iteration-count: infinite;
+        }
+        @keyframes pathAnim-0 {
+          0% {
+            d: path(
+              "M 0,400 L 0,150 C 39.42349026684067,139.0675893674553 78.84698053368135,128.13517873491062 126,135 C 173.15301946631865,141.86482126508938 228.03556813211526,166.52687442781277 277,152 C 325.96443186788474,137.47312557218723 369.01074693785756,83.75732355383828 404,90 C 438.98925306214244,96.24267644616172 465.9214441164544,162.4438313568341 503,165 C 540.0785558835456,167.5561686431659 587.303476596325,106.4673510188253 641,89 C 694.696523403675,71.5326489811747 754.864649498246,97.6867645678647 797,102 C 839.135350501754,106.3132354321353 863.2379254106912,88.78559070971582 901,112 C 938.7620745893088,135.21440929028418 990.18364885899,199.17087259327207 1044,195 C 1097.81635114101,190.82912740672793 1154.027479153349,118.53091891719598 1192,105 C 1229.972520846651,91.46908108280402 1249.7064345276144,136.705451737944 1288,154 C 1326.2935654723856,171.294548262056 1383.1467827361928,160.64727413102798 1440,150 L 1440,400 L 0,400 Z"
+            );
+          }
+          25% {
+            d: path(
+              "M 0,400 L 0,150 C 36.48013968008867,150.22405125380942 72.96027936017734,150.44810250761884 119,146 C 165.03972063982266,141.55189749238116 220.63902223937924,132.43164122333408 264,148 C 307.36097776062076,163.56835877666592 338.4836316823057,203.82533259904486 384,193 C 429.5163683176943,182.17466740095514 489.42645103139785,120.26702838048656 543,113 C 596.5735489686022,105.73297161951344 643.8105641921027,153.10655387900883 679,155 C 714.1894358078973,156.89344612099117 737.3312922001917,113.30675610347801 778,101 C 818.6687077998083,88.69324389652199 876.8642670071309,107.66642170707911 920,124 C 963.1357329928691,140.3335782929209 991.2116397712844,154.0275570682056 1030,145 C 1068.7883602287156,135.9724429317944 1118.289173907731,104.22335002009848 1171,88 C 1223.710826092269,71.77664997990152 1279.631664597791,71.07904285140043 1325,84 C 1370.368335402209,96.92095714859957 1405.1841677011043,123.46047857429978 1440,150 L 1440,400 L 0,400 Z"
+            );
+          }
+          50% {
+            d: path(
+              "M 0,400 L 0,150 C 48.10152659995502,183.95494750486523 96.20305319991004,217.9098950097305 140,207 C 183.79694680008996,196.0901049902695 223.28931380031491,140.31536746594324 269,147 C 314.7106861996851,153.68463253405676 366.6396915988305,222.82863512649658 405,218 C 443.3603084011695,213.17136487350342 468.1519198043628,134.3700920280706 512,123 C 555.8480801956372,111.62990797192943 618.7526291837179,167.6909967612211 672,160 C 725.2473708162821,152.3090032387789 768.8375634607655,80.86592092704511 806,89 C 843.1624365392345,97.13407907295489 873.8971169732204,184.8453195305984 920,212 C 966.1028830267796,239.1546804694016 1027.5739686463533,205.75280095056127 1069,189 C 1110.4260313536467,172.24719904943873 1131.8070084413664,172.14347666715656 1164,181 C 1196.1929915586336,189.85652333284344 1239.197997588181,207.6732923808124 1287,204 C 1334.802002411819,200.3267076191876 1387.4010012059096,175.1633538095938 1440,150 L 1440,400 L 0,400 Z"
+            );
+          }
+          75% {
+            d: path(
+              "M 0,400 L 0,150 C 33.5837434192935,148.86360118926405 67.167486838587,147.7272023785281 114,162 C 160.832513161413,176.2727976214719 220.91379606494553,205.9547916751517 271,196 C 321.08620393505447,186.0452083248483 361.17732890163074,136.45363092086507 407,122 C 452.82267109836926,107.54636907913493 504.37688832853144,128.23068464138805 547,126 C 589.6231116714686,123.76931535861196 623.3151177842432,98.62363051358284 667,116 C 710.6848822157568,133.37636948641716 764.3626405344959,193.27479330428054 799,204 C 833.6373594655041,214.72520669571946 849.2343200777733,176.27719626929502 896,156 C 942.7656799222267,135.72280373070498 1020.7000791544112,133.61642161853948 1066,157 C 1111.2999208455888,180.38357838146052 1123.9653633045818,229.25711725654705 1164,212 C 1204.0346366954182,194.74288274345295 1271.4384676272623,111.35510935527228 1322,90 C 1372.5615323727377,68.64489064472772 1406.280766186369,109.32244532236386 1440,150 L 1440,400 L 0,400 Z"
+            );
+          }
+          100% {
+            d: path(
+              "M 0,400 L 0,150 C 39.42349026684067,139.0675893674553 78.84698053368135,128.13517873491062 126,135 C 173.15301946631865,141.86482126508938 228.03556813211526,166.52687442781277 277,152 C 325.96443186788474,137.47312557218723 369.01074693785756,83.75732355383828 404,90 C 438.98925306214244,96.24267644616172 465.9214441164544,162.4438313568341 503,165 C 540.0785558835456,167.5561686431659 587.303476596325,106.4673510188253 641,89 C 694.696523403675,71.5326489811747 754.864649498246,97.6867645678647 797,102 C 839.135350501754,106.3132354321353 863.2379254106912,88.78559070971582 901,112 C 938.7620745893088,135.21440929028418 990.18364885899,199.17087259327207 1044,195 C 1097.81635114101,190.82912740672793 1154.027479153349,118.53091891719598 1192,105 C 1229.972520846651,91.46908108280402 1249.7064345276144,136.705451737944 1288,154 C 1326.2935654723856,171.294548262056 1383.1467827361928,160.64727413102798 1440,150 L 1440,400 L 0,400 Z"
+            );
+          }
+        }
+      </style>
+      <defs>
+        <linearGradient id="gradient" x1="50%" y1="100%" x2="50%" y2="0%">
+          <stop offset="5%" stop-color="#0099ff"></stop>
+          <stop offset="95%" stop-color="#8ed1fc"></stop>
+        </linearGradient>
+      </defs>
+      <path
+        d="M 0,400 L 0,150 C 39.42349026684067,139.0675893674553 78.84698053368135,128.13517873491062 126,135 C 173.15301946631865,141.86482126508938 228.03556813211526,166.52687442781277 277,152 C 325.96443186788474,137.47312557218723 369.01074693785756,83.75732355383828 404,90 C 438.98925306214244,96.24267644616172 465.9214441164544,162.4438313568341 503,165 C 540.0785558835456,167.5561686431659 587.303476596325,106.4673510188253 641,89 C 694.696523403675,71.5326489811747 754.864649498246,97.6867645678647 797,102 C 839.135350501754,106.3132354321353 863.2379254106912,88.78559070971582 901,112 C 938.7620745893088,135.21440929028418 990.18364885899,199.17087259327207 1044,195 C 1097.81635114101,190.82912740672793 1154.027479153349,118.53091891719598 1192,105 C 1229.972520846651,91.46908108280402 1249.7064345276144,136.705451737944 1288,154 C 1326.2935654723856,171.294548262056 1383.1467827361928,160.64727413102798 1440,150 L 1440,400 L 0,400 Z"
+        stroke="none"
+        stroke-width="0"
+        fill="url(#gradient)"
+        fill-opacity="1"
+        class="transition-all duration-300 ease-in-out delay-150 path-0"
+      ></path>
+    </svg>
+    <div class="bg-blueee mx-auto py-6 -mt-10 sm:mt-0 bg-blueee">
+      <div
+        class="flex flex-col lg:flex-row items-center rounded-lg overflow-hidden justify-center mx-auto"
+      >
+        <div class="lg:w-1/3 w-full order-2 sm:order-1" data-aos="fade-right">
+          <div class="rotate-animation relative">
+            <img
+              src="img/mn.png"
+              alt="about Image"
+              class="object-cover w-96 h-96 mx-auto rounded-full"
+            />
+            <div class="orbit">
+              <div class="bubble"><img src="img/hw1.png" alt="" /></div>
+              <div class="bubble"><img src="img/hw1.png" alt="" /></div>
+              <div class="bubble"><img src="img/hw1.png" alt="" /></div>
+              <div class="bubble"><img src="img/hw1.png" alt="" /></div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="lg:w-1/2 w-full p-6 sm:text-center py-5 lg:text-start text-start"
+          data-aos="fade-left"
+        >
+          <h1
+            class="text-6xl font-pop text-center font-bold mb-4 bg-gradient-to-t from-white to-blue-700 bg-clip-text text-transparent"
+          >
+            About Me
+          </h1>
+
+          <h2
+            class="font-pop text-center -mt-4 text-xl font-bold mb-4 bg-gradient-to-t from-white to-blueee bg-clip-text text-transparent"
+          >
+            Front end Development
+          </h2>
+
+          <p class="text-gray-100 mb-4 font-sinica text-sm text-center">
+            Hello! I'm KARIM, a Programmer, my passion is computer. That's it.
+          </p>
+        </div>
+      </div>
+    </div>
+    <svg
+      width="100%"
+      height="100%"
+      id="svg"
+      viewBox="0 0 1440 390"
+      xmlns="http://www.w3.org/2000/svg"
+      class="transition duration-300 ease-in-out delay-150 -mt-5 sm:-mt-16 lg:-mt-28"
+    >
+      <style>
+        .path-0 {
+          animation: pathAnim-0 4s;
+          animation-timing-function: linear;
+          animation-iteration-count: infinite;
+        }
+        @keyframes pathAnim-0 {
+          0% {
+            d: path(
+              "M 0,400 L 0,150 C 31.56491051838536,177.26766501890086 63.12982103677072,204.53533003780169 118,202 C 172.87017896322928,199.46466996219831 251.0456263713025,167.12634486769412 311,149 C 370.9543736286975,130.87365513230588 412.68767347801946,126.95929049142194 450,153 C 487.31232652198054,179.04070950857806 520.2036797166196,235.0364931666182 563,218 C 605.7963202833804,200.9635068333818 658.4976076555024,110.89473684210529 707,108 C 755.5023923444976,105.10526315789471 799.8058896613707,189.38455946496074 843,191 C 886.1941103386293,192.61544053503926 928.2788336990141,111.56702529805175 983,106 C 1037.721166300986,100.43297470194825 1105.078775542573,170.3473393428322 1153,196 C 1200.921224457427,221.6526606571678 1229.4060641306935,203.04361733061938 1274,188 C 1318.5939358693065,172.95638266938062 1379.2969679346534,161.4781913346903 1440,150 L 1440,400 L 0,400 Z"
+            );
+          }
+          25% {
+            d: path(
+              "M 0,400 L 0,150 C 52.49908800126887,113.64441301646886 104.99817600253775,77.2888260329377 149,79 C 193.00182399746225,80.7111739670623 228.5063839911179,120.48910888471804 278,146 C 327.4936160088821,171.51089111528196 390.97628803299057,182.75473842819002 444,201 C 497.02371196700943,219.24526157180998 539.5884638769197,244.4919374025219 582,223 C 624.4115361230803,201.5080625974781 666.6698564593303,133.2775119617225 708,108 C 749.3301435406697,82.7224880382775 789.7321102857596,100.39801475058815 845,134 C 900.2678897142404,167.60198524941185 970.4017023976314,217.13042903592483 1023,220 C 1075.5982976023686,222.86957096407517 1110.6610801237148,179.08026910571252 1160,168 C 1209.3389198762852,156.91973089428748 1272.9539771075101,178.548494541225 1322,181 C 1371.0460228924899,183.451505458775 1405.523011446245,166.7257527293875 1440,150 L 1440,400 L 0,400 Z"
+            );
+          }
+          50% {
+            d: path(
+              "M 0,400 L 0,150 C 47.28164899944487,111.53888551111581 94.56329799888974,73.07777102223163 149,91 C 203.43670200111026,108.92222897776837 265.0284570038859,183.22780142218932 309,218 C 352.9715429961141,252.77219857781068 379.3228739855666,248.01102328901106 416,213 C 452.6771260144334,177.98897671098894 499.6800470538476,112.72810542176639 553,89 C 606.3199529461524,65.27189457823361 665.9569377990431,83.07655502392345 724,95 C 782.0430622009569,106.92344497607655 838.4922017499803,112.96567448253984 888,139 C 937.5077982500197,165.03432551746016 980.0742552010361,211.06074704591717 1019,195 C 1057.925744798964,178.93925295408283 1093.210777445875,100.79133733379153 1139,84 C 1184.789222554125,67.20866266620847 1241.0826350154641,111.7739036189167 1293,133 C 1344.9173649845359,154.2260963810833 1392.458682492268,152.11304819054163 1440,150 L 1440,400 L 0,400 Z"
+            );
+          }
+          75% {
+            d: path(
+              "M 0,400 L 0,150 C 45.45153189352085,190.93401887440854 90.9030637870417,231.86803774881704 139,216 C 187.0969362129583,200.13196225118296 237.83927674535408,127.46186787914033 285,118 C 332.1607232546459,108.53813212085967 375.7398292315419,162.28449073462158 422,185 C 468.2601707684581,207.71550926537842 517.2014063284782,199.4001691823733 566,194 C 614.7985936715218,188.5998308176267 663.4545454545454,186.11483253588517 720,174 C 776.5454545454546,161.88516746411483 840.98041185334,140.140500674086 883,130 C 925.01958814666,119.85949932591399 944.6238071320945,121.32316476777078 984,134 C 1023.3761928679055,146.67683523222922 1082.524359618282,170.56684025483094 1133,187 C 1183.475640381718,203.43315974516906 1225.2787543947766,212.40947421290542 1275,205 C 1324.7212456052234,197.59052578709458 1382.3606228026117,173.7952628935473 1440,150 L 1440,400 L 0,400 Z"
+            );
+          }
+          100% {
+            d: path(
+              "M 0,400 L 0,150 C 31.56491051838536,177.26766501890086 63.12982103677072,204.53533003780169 118,202 C 172.87017896322928,199.46466996219831 251.0456263713025,167.12634486769412 311,149 C 370.9543736286975,130.87365513230588 412.68767347801946,126.95929049142194 450,153 C 487.31232652198054,179.04070950857806 520.2036797166196,235.0364931666182 563,218 C 605.7963202833804,200.9635068333818 658.4976076555024,110.89473684210529 707,108 C 755.5023923444976,105.10526315789471 799.8058896613707,189.38455946496074 843,191 C 886.1941103386293,192.61544053503926 928.2788336990141,111.56702529805175 983,106 C 1037.721166300986,100.43297470194825 1105.078775542573,170.3473393428322 1153,196 C 1200.921224457427,221.6526606571678 1229.4060641306935,203.04361733061938 1274,188 C 1318.5939358693065,172.95638266938062 1379.2969679346534,161.4781913346903 1440,150 L 1440,400 L 0,400 Z"
+            );
+          }
+        }
+      </style>
+      <defs>
+        <linearGradient id="gradient" x1="50%" y1="100%" x2="50%" y2="0%">
+          <stop offset="5%" stop-color="#0099ff"></stop>
+          <stop offset="95%" stop-color="#8ed1fc"></stop>
+        </linearGradient>
+      </defs>
+      <path
+        d="M 0,400 L 0,150 C 31.56491051838536,177.26766501890086 63.12982103677072,204.53533003780169 118,202 C 172.87017896322928,199.46466996219831 251.0456263713025,167.12634486769412 311,149 C 370.9543736286975,130.87365513230588 412.68767347801946,126.95929049142194 450,153 C 487.31232652198054,179.04070950857806 520.2036797166196,235.0364931666182 563,218 C 605.7963202833804,200.9635068333818 658.4976076555024,110.89473684210529 707,108 C 755.5023923444976,105.10526315789471 799.8058896613707,189.38455946496074 843,191 C 886.1941103386293,192.61544053503926 928.2788336990141,111.56702529805175 983,106 C 1037.721166300986,100.43297470194825 1105.078775542573,170.3473393428322 1153,196 C 1200.921224457427,221.6526606571678 1229.4060641306935,203.04361733061938 1274,188 C 1318.5939358693065,172.95638266938062 1379.2969679346534,161.4781913346903 1440,150 L 1440,400 L 0,400 Z"
+        stroke="none"
+        stroke-width="0"
+        fill="url(#gradient)"
+        fill-opacity="1"
+        class="transition-all duration-300 ease-in-out delay-150 path-0"
+        transform="rotate(-180 720 200)"
+      ></path>
+    </svg>
+    <!-- section tiga -->
+
+    <!-- section delapan -->
+
+    <div class="">
+      <h2 class="font-pop text-2xl text-blueee text-center py-8">
+        Beberapa Artikel
+      </h2>
+      <p
+        class="text-sm font-sinica text-slate-500 text-center mx-10 sm:mx-3 -mt-7 h"
+      >
+        @Baca Artikel Yang Ada
+      </p>
+      <div
+        class="flex justify-evenly flex-wrap mx-auto container relative mt-10"
+      >
+        <div
+          id="zoomable-1"
+          class="zoomable bg-slate-100 f w-96 sm:w-80 lg:w-96 my-7 mx-5 shadow-lg shadow-blueee rounded-lg overflow-hidden"
+          data-aos="fade-right"
+          data-aos-duration="1000"
+        >
+          <img src="img/sipispis.jpg" class="h-60 w-full" />
+          <p class="mx-5 text-slate-500 font-sinica h text-base mt-5">
+            Berikut ini artikel Penjelasan mengenai P.seng Desa Marjanji
+            Kecamatan Sipispis Serdang Bedagai.
+          </p>
+          <div class="mt-5 sm:mt-3 my-3 flex justify-center hover:shadow-fb">
+            <a
+              href="sipispis.html"
+              target="_blank"
+              class="font-pop text-md hover:opacity-60 bg-blueee p-2 px-6 rounded-xl transform transition-transform duration-300 hover:scale-125"
+            >
+              <span
+                class="bg-gradient-to-b font-pop text-md from-white to-white bg-clip-text text-transparent"
+                >Telusuri</span
+              >
+            </a>
+          </div>
+        </div>
+
+        <div
+          id="zoomable-2"
+          class="zoomable bg-slate-100 f w-96 sm:w-80 lg:w-96 my-7 mx-5 shadow-lg shadow-blueee rounded-lg overflow-hidden"
+          data-aos="fade-right"
+          data-aos-duration="1000"
+        >
+          <img src="img/sungai.jpg" class="h-60 w-full" />
+          <p class="mx-5 text-slate-500 font-sinica h text-base mt-5">
+            Artikel Penjelasan mengenai Sungai Bahbolon Kecamatan Sipispis
+            Serdang Bedagai Sumatera Utara Indonesia.
+          </p>
+          <div class="mt-5 sm:mt-3 my-3 flex justify-center hover:shadow-fb">
+            <a
+              href="sungai.html"
+              target="_blank"
+              class="font-pop text-md hover:opacity-60 bg-blueee p-2 px-6 rounded-xl transform transition-transform duration-300 hover:scale-125"
+            >
+              <span
+                class="bg-gradient-to-b font-pop text-md from-white to-white bg-clip-text text-transparent"
+                >Telusuri</span
+              >
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex justify-evenly flex-wrap mx-auto container relative">
+        <div
+          id="zoomable-3"
+          class="zoomable bg-slate-100 f w-96 sm:w-80 lg:w-96 my-7 mx-5 shadow-lg shadow-blueee rounded-lg overflow-hidden"
+          data-aos="fade-right"
+          data-aos-duration="1000"
+        >
+          <img src="img/stoikisme.jpg" class="h-60 w-full" />
+          <p class="mx-5 text-slate-500 font-sinica h text-base mt-5">
+            Stoikisme sebuah filosofi yang mengajarkan pentingnya pengendalian
+            diri, dan ketenangan dalam menghadapi tantangan hidup. Baca
+            selengkapnya betapa penting nya ilmu stoikisme.
+          </p>
+          <div class="mt-5 sm:mt-3 my-3 flex justify-center hover:shadow-fb">
+            <a
+              href="stoikisme.html"
+              target="_blank"
+              class="font-pop text-md hover:opacity-60 bg-blueee p-2 px-6 rounded-xl transform transition-transform duration-300 hover:scale-125"
+            >
+              <span
+                class="bg-gradient-to-b font-pop text-md from-white to-white bg-clip-text text-transparent"
+                >Telusuri</span
+              >
+            </a>
+          </div>
+        </div>
+        <div
+          id="zoomable-2"
+          class="zoomable bg-slate-100 f w-96 sm:w-80 lg:w-96 my-7 mx-5 shadow-lg shadow-blueee rounded-lg overflow-hidden"
+          data-aos="fade-right"
+          data-aos-duration="1000"
+        >
+          <img src="img/sinar.jpg" class="h-60 w-full" />
+          <p class="mx-5 text-slate-500 font-sinica h text-base mt-5">
+            kita dihadapkan pada berbagai macam lingkungan dan pergaulan.
+            Seperti sebuah berlian, meskipun berada di lumpur sekalipun, ia
+            tetaplah berlian yang berharga. Baca Selengkapnya.
+          </p>
+
+          <div class="mt-5 sm:mt-3 my-3 flex justify-center hover:shadow-fb">
+            <a
+              href="bersinar.html"
+              target="_blank"
+              class="font-pop text-md hover:opacity-60 bg-blueee p-2 px-6 rounded-xl transform transition-transform duration-300 hover:scale-125"
+            >
+              <span
+                class="bg-gradient-to-b font-pop text-md from-white to-white bg-clip-text text-transparent"
+                >Telusuri</span
+              >
+            </a>
+          </div>
+        </div>
+        <div
+          id="zoomable-2"
+          class="zoomable bg-slate-100 f w-96 sm:w-80 lg:w-96 my-7 mx-5 shadow-lg shadow-blueee rounded-lg overflow-hidden"
+          data-aos="fade-right"
+          data-aos-duration="1000"
+        >
+          <img src="img/air putih.jpg" class="h-60 w-full" />
+          <p class="mx-5 text-slate-500 font-sinica h text-base mt-5">
+            Minum air putih di pagi hari saat perut kosong adalah kebiasaan
+            sederhana namun memiliki banyak manfaat besar untuk kesehatan tubuh.
+            Baca Selengkapnya untuk penjelasan lebih detail.
+          </p>
+          <div class="mt-5 sm:mt-3 my-3 flex justify-center hover:shadow-fb">
+            <a
+              href="air-putih.html"
+              target="_blank"
+              class="font-pop text-md hover:opacity-60 bg-blueee p-2 px-6 rounded-xl transform transition-transform duration-300 hover:scale-125"
+            >
+              <span
+                class="bg-gradient-to-b font-pop text-md from-white to-white bg-clip-text text-transparent"
+                >Telusuri</span
+              >
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- section delapan -->
+
+    <!-- Section Massege and Maps -->
+    <h2 class="font-pop text-2xl text-blueee text-center py-8">Contact</h2>
+    <p
+      class="text-sm font-sinica text-slate-500 text-center mx-10 sm:mx-3 -mt-7 h"
+    >
+      @Hubungin saya jika ada yang dibutuhkan dan berikan masukan yang perlu
+      saya improve mengenai web saya.
+    </p>
+    <div class="flex items-center justify-center min-h-screen py-10 flex-wrap">
+      <div class="p-8 max-w-xl w-[500px] sm:w-1/2">
+        <form class="space-y-4" onsubmit="handleSubmit(event)">
+          <div>
+            <label
+              for="name"
+              class="block text-lg font-bold text-gray-500 mb-1 font-sinica h"
+              >Name</label
+            >
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              class="w-full p-2 mb-2 shadow-md shadow-blueee font-sinica border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 capitalize f h"
+              type="text"
+              placeholder="ketik name yang sesuai"
+            />
+          </div>
+          <div>
+            <label
+              for="email"
+              class="block text-lg font-bold text-gray-500 mb-1 font-sinica h"
+              >Email</label
+            >
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              class="w-full p-2 mb-2 shadow-md shadow-blueee font-sinica border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 capitalize f h"
+              type="text"
+              placeholder="ketik email anda dengan benar"
+            />
+          </div>
+          <div>
+            <label
+              for="message"
+              class="block text-lg font-bold text-gray-500 mb-1 font-sinica h"
+              >Message</label
+            >
+            <textarea
+              id="message"
+              name="message"
+              rows="4"
+              required
+              class="w-full p-2 mb-2 shadow-md shadow-blueee font-sinica border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 capitalize f h"
+              type="text"
+              placeholder="ketik pesan yang ingin anda sampaikan"
+            ></textarea>
+          </div>
+          <button
+            type="submit"
+            class="w-full inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-lg font-medium rounded-md text-white bg-blueee hover:opacity-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+          >
+            Submit
+          </button>
+        </form>
+
+        <div class="mt-8">
+          <h3 class="text-xl font-bold mb-2">Reactions</h3>
+          <div class="flex flex-wrap space-x-4" data-article-id="0">
+            <div class="reaction -mr-1 sm:-mr-0" data-reaction="cool">
+              <div class="emoji">
+                <!-- SVG for Wow -->
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+                  <!--  SVG data here -->
+                  <?xml version="1.0" ?><svg
+                    id="Layer_1"
+                    style="enable-background: new 0 0 64 64"
+                    version="1.1"
+                    viewBox="0 0 64 64"
+                    xml:space="preserve"
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                  >
+                    <style type="text/css">
+                      .st0 {
+                        fill: url(#SVGID_1_);
+                      }
+                      .st1 {
+                        fill: url(#SVGID_2_);
+                      }
+                      .st2 {
+                        fill: url(#SVGID_3_);
+                      }
+                      .st3 {
+                        fill: url(#SVGID_4_);
+                      }
+                      .st4 {
+                        fill: #ffffff;
+                      }
+                      .st5 {
+                        fill: url(#SVGID_5_);
+                      }
+                      .st6 {
+                        fill: url(#SVGID_6_);
+                      }
+                      .st7 {
+                        fill: url(#SVGID_7_);
+                      }
+                      .st8 {
+                        fill: url(#SVGID_8_);
+                      }
+                      .st9 {
+                        fill: url(#SVGID_9_);
+                      }
+                      .st10 {
+                        fill: #ffbf0b;
+                      }
+                      .st11 {
+                        fill: #1a1a54;
+                      }
+                      .st12 {
+                        fill: #dc2863;
+                      }
+                      .st13 {
+                        fill: none;
+                        stroke: #1a1a54;
+                        stroke-width: 3;
+                        stroke-linecap: round;
+                        stroke-linejoin: round;
+                        stroke-miterlimit: 10;
+                      }
+                      .st14 {
+                        fill: #0b85ff;
+                      }
+                      .st15 {
+                        opacity: 0.5;
+                        fill: #ffffff;
+                      }
+                      .st16 {
+                        fill: #00af64;
+                      }
+                      .st17 {
+                        fill: #00d17c;
+                      }
+                      .st18 {
+                        fill: none;
+                        stroke: #00d17c;
+                        stroke-width: 3;
+                        stroke-linecap: round;
+                        stroke-linejoin: round;
+                        stroke-miterlimit: 10;
+                      }
+                    </style>
+                    <circle class="st10" cx="32" cy="32" r="32" />
+                    <g>
+                      <path
+                        class="st11"
+                        d="M29.4,44.4c1.3-0.2,2.6-0.3,3.7-0.5c1.2-0.2,2.3-0.4,3.4-0.6c1.1-0.2,2.1-0.6,3.2-1c1.1-0.4,2.1-1,3.3-1.6   l0.1-0.1c0.4-0.2,1,0,1.2,0.4c0.1,0.2,0.1,0.4,0.1,0.6c-0.4,1.5-1.3,2.9-2.5,3.9c-1.2,1.1-2.7,1.9-4.2,2.2   c-1.5,0.4-3.1,0.5-4.6,0.3c-1.5-0.2-2.9-0.7-4.3-1.6c-0.5-0.4-0.6-1-0.3-1.5c0.2-0.2,0.4-0.4,0.7-0.5L29.4,44.4z"
+                      />
+                    </g>
+                    <path
+                      class="st11"
+                      d="M50,14.4c-10,0.8-14.8,2-18,2c-3.2,0-8-1.2-18-2c-9.9-0.8-13.9-0.8-14,2v2.3c0.1,2,0.7,3.9,3.1,4.6  c0.2,3.6,0.6,10.6,6.5,12.9c5.3,2.1,15,2.1,18.6-6.1c1.8-4,0.4-7.6,3.7-7.6c3.3,0,2,3.6,3.7,7.6c3.6,8.2,13.3,8.2,18.6,6.1  c5.9-2.3,6.3-9.3,6.5-12.9c2.4-0.8,3-2.6,3.1-4.6v-2.3C64,13.6,59.9,13.6,50,14.4z"
+                    />
+                    <path
+                      class="st14"
+                      d="M26.3,24.7c-1.4,7.9-5.7,10.3-13,9.2S6.7,23.3,6.6,21.2c0-2.1,1.1-2.7,2.5-2.9C13.5,17.6,21.6,19,24,20  C26.8,21.1,26.8,22,26.3,24.7z M37.9,24.7c1.4,7.9,5.7,10.3,13,9.2s6.6-10.6,6.6-12.7s-1.1-2.7-2.5-2.9C50.7,17.6,42.6,19,40.1,20  C37.3,21.1,37.4,22,37.9,24.7z"
+                    />
+                    <polygon
+                      class="st4"
+                      points="5.3,18.1 3.8,19.2 2.4,18.1 3.8,17 "
+                    />
+                    <polygon
+                      class="st4"
+                      points="61.6,18.1 60.2,19.2 58.7,18.1 60.2,17 "
+                    />
+                  </svg>
+                </svg>
+              </div>
+              <span class="reaction-count">0</span>
+              <p class="reaction-text h">Cool</p>
+            </div>
+            <div class="reaction -mr-3 sm:-mr-0" data-reaction="wow">
+              <div class="emoji">
+                <!-- SVG for Crying -->
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+                  <!--  SVG data here -->
+                  <?xml version="1.0" ?><svg
+                    enable-background="new 0 0 64 64"
+                    id="Filled_Outline_00000081607312705973271110000009714898175699931553_"
+                    version="1.1"
+                    viewBox="0 0 64 64"
+                    xml:space="preserve"
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                  >
+                    <g>
+                      <g>
+                        <path
+                          d="M41,17h-0.1c-2.705-1.27-5.714-2-8.9-2s-6.195,0.73-8.9,2H23C10.85,17,1,26.85,1,39v0    c0,12.15,9.85,22,22,22h0.1c2.705,1.27,5.714,2,8.9,2s6.195-0.73,8.9-2H41c12.15,0,22-9.85,22-22v0C63,26.85,53.15,17,41,17z"
+                          fill="#FF6D1F"
+                        />
+                        <path
+                          d="M21,4L21,4c0,1.657,1.343,3,3,3h0c2.761,0,5,2.239,5,5v3h6v-3c0-6.075-4.925-11-11-11h0    C22.343,1,21,2.343,21,4z"
+                          fill="#A69D24"
+                        />
+                        <path
+                          d="M25,29l4,2l-4,2l-2,4l-2-4l-4-2l4-2l2-4L25,29z M41,25l-2,4l-4,2l4,2l2,4l2-4l4-2l-4-2L41,25z"
+                          fill="#F2D95C"
+                        />
+                        <ellipse cx="32" cy="50" fill="#732002" rx="5" ry="7" />
+                      </g>
+                      <g>
+                        <path
+                          d="M30,31c0-0.379-0.214-0.725-0.553-0.895l-3.702-1.851l-1.851-3.702c-0.34-0.678-1.449-0.678-1.789,0    l-1.851,3.702l-3.702,1.851C16.214,30.275,16,30.621,16,31s0.214,0.725,0.553,0.895l3.702,1.851l1.851,3.702    C22.275,37.786,22.621,38,23,38s0.725-0.214,0.895-0.553l1.851-3.702l3.702-1.851C29.786,31.725,30,31.379,30,31z M24.553,32.105    c-0.193,0.097-0.351,0.254-0.447,0.447L23,34.764l-1.105-2.211c-0.097-0.193-0.254-0.351-0.447-0.447L19.236,31l2.211-1.105    c0.193-0.097,0.351-0.254,0.447-0.447L23,27.236l1.105,2.211c0.097,0.193,0.254,0.351,0.447,0.447L26.764,31L24.553,32.105z"
+                          fill="#260A04"
+                        />
+                        <path
+                          d="M47.447,30.105l-3.702-1.851l-1.851-3.702c-0.34-0.678-1.449-0.678-1.789,0l-1.851,3.702l-3.702,1.851    C34.214,30.275,34,30.621,34,31s0.214,0.725,0.553,0.895l3.702,1.851l1.851,3.702C40.275,37.786,40.621,38,41,38    s0.725-0.214,0.895-0.553l1.851-3.702l3.702-1.851C47.786,31.725,48,31.379,48,31S47.786,30.275,47.447,30.105z M42.553,32.105    c-0.193,0.097-0.351,0.254-0.447,0.447L41,34.764l-1.105-2.211c-0.097-0.193-0.254-0.351-0.447-0.447L37.236,31l2.211-1.105    c0.193-0.097,0.351-0.254,0.447-0.447L41,27.236l1.105,2.211c0.097,0.193,0.254,0.351,0.447,0.447L44.764,31L42.553,32.105z"
+                          fill="#260A04"
+                        />
+                        <path
+                          d="M32,42c-3.309,0-6,3.589-6,8s2.691,8,6,8s6-3.589,6-8S35.309,42,32,42z M32,56c-2.168,0-4-2.748-4-6    s1.832-6,4-6s4,2.748,4,6S34.168,56,32,56z"
+                          fill="#260A04"
+                        />
+                        <path
+                          d="M64,39c0-12.63-10.233-22.911-22.843-22.996c-1.623-0.746-3.351-1.3-5.157-1.633V12    c0-6.617-5.383-12-12-12c-2.206,0-4,1.794-4,4s1.794,4,4,4s4,1.794,4,4v2.371c-1.805,0.333-3.534,0.887-5.157,1.633    C10.233,16.089,0,26.37,0,39s10.233,22.911,22.843,22.996C25.633,63.279,28.733,64,32,64s6.367-0.721,9.157-2.004    C53.767,61.911,64,51.63,64,39z M24,6c-1.103,0-2-0.897-2-2s0.897-2,2-2c5.514,0,10,4.486,10,10v2.095    C33.341,14.035,32.675,14,32,14s-1.341,0.035-2,0.095V12C30,8.691,27.309,6,24,6z M45.218,59.574C50.547,55.555,54,49.174,54,42    h-2c0,11.028-8.972,20-20,20s-20-8.972-20-20h-2c0,7.174,3.453,13.555,8.782,17.574C9.218,57.616,2,49.135,2,39    s7.218-18.616,16.782-20.574C13.453,22.445,10,28.826,10,36h2c0-11.028,8.972-20,20-20s20,8.972,20,20h2    c0-7.174-3.453-13.555-8.782-17.574C54.782,20.384,62,28.865,62,39S54.782,57.616,45.218,59.574z"
+                          fill="#260A04"
+                        />
+                      </g>
+                    </g>
+                  </svg>
+                </svg>
+              </div>
+              <span class="reaction-count">0</span>
+              <p class="reaction-text h">Wow</p>
+            </div>
+            <div class="reaction -mr-3 sm:-mr-0" data-reaction="like">
+              <div class="emoji">
+                <!-- SVG for Angry -->
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+                  <!--  SVG data here -->
+                  <?xml version="1.0" ?><svg
+                    enable-background="new 0 0 64 64"
+                    version="1.1"
+                    viewBox="0 0 64 64"
+                    xml:space="preserve"
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                  >
+                    <g id="row_4" />
+                    <g id="row_3" />
+                    <g id="row_2">
+                      <g id="like">
+                        <path
+                          d="M14,58h9.7c1.6,0,3.1,0.5,4.3,1.5c2,1.6,4.5,2.5,7,2.5h15c3.9,0,7-3.1,7-7c0-0.5-0.1-0.9-0.3-1.3    C58.6,53,60,51.2,60,49c0-1.3-0.5-2.4-1.3-3.3C60.6,45,62,43.2,62,41c0-1.4-0.6-2.7-1.6-3.6c1.5-0.9,2.6-2.5,2.6-4.4    c0-2.8-2.2-5-5-5H43.3l3.3-13.8c0.3-1,0.4-2.1,0.4-3.2c0-2.7-0.9-5.4-2.7-7.5c-0.8-1-2.1-1.4-3.3-0.9c-1.2,0.4-2,1.5-2,2.8v1.6    c0,2.4-0.6,4.7-1.9,6.7l-4.4,7.3c-0.7,1.2-1.7,2.2-2.9,2.9c-1.4,0.9-2.5,2.1-3.3,3.4c-1.4,2.4-3.2,4.5-5.3,6    C19.7,34.4,17.9,35,16,35h-2V58z"
+                          fill="#FFCCBC"
+                        />
+                        <path
+                          d="M16.9,58c-1.2-4.7-1.9-9.6-1.9-14.7c0-2.8,0.2-5.6,0.6-8.3H14v23H16.9z"
+                          fill="#FFAB91"
+                        />
+                        <g>
+                          <polygon
+                            fill="#FFAB91"
+                            points="56.7,53.7 51,52 51,54    "
+                          />
+                          <polygon
+                            fill="#FFAB91"
+                            points="58.7,45.7 53,44 53,46    "
+                          />
+                          <polygon
+                            fill="#FFAB91"
+                            points="60.4,37.4 53,36 53,38    "
+                          />
+                          <path
+                            d="M43.7,26.2c-2.1,0.9-4.3,1.6-6.7,1.8l0,0h6.3L43.7,26.2z"
+                            fill="#FFAB91"
+                          />
+                        </g>
+                        <path
+                          d="M13,61H1V33h12c1.1,0,2,0.9,2,2v24C15,60.1,14.1,61,13,61z"
+                          fill="#E1BEE7"
+                        />
+                        <rect
+                          fill="#AB47BC"
+                          height="3"
+                          width="1"
+                          x="6"
+                          y="50.5"
+                        />
+                        <circle cx="6.5" cy="55.5" fill="#FFFFFF" r="2.5" />
+                      </g>
+                    </g>
+                    <g id="row_1" />
+                  </svg>
+                </svg>
+              </div>
+              <span class="reaction-count">0</span>
+              <p class="reaction-text h">Like</p>
+            </div>
+            <div class="reaction -mr-3 sm:-mr-0" data-reaction="no_like">
+              <div class="emoji">
+                <!-- SVG for Happy -->
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+                  <!--  SVG data here -->
+
+                  <svg
+                    height="64.026px"
+                    id="Layer_1"
+                    style="enable-background: new 0 0 64 64.026"
+                    version="1.1"
+                    viewBox="0 0 64 64.026"
+                    width="64px"
+                    xml:space="preserve"
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                  >
+                    <g id="Ears">
+                      <g>
+                        <path
+                          d="M8.81,5.056c-2.688,1.817-3.608,5.841-2.057,8.987    c1.552,3.147,6.861,8.023,9.55,6.207c2.688-1.817,1.735-9.64,0.184-12.786C14.934,4.317,11.497,3.239,8.81,5.056z M40.311,0.009    c-3.312,0.18-6.146,3.099-6.333,6.518c-0.186,3.42,2.123,10.172,5.434,9.991c3.312-0.18,6.371-7.226,6.558-10.645    C46.154,2.454,43.621-0.172,40.311,0.009z"
+                          style="
+                            fill-rule: evenodd;
+                            clip-rule: evenodd;
+                            fill: #75a64b;
+                          "
+                        />
+                      </g>
+                    </g>
+                    <g id="Head_2_">
+                      <g>
+                        <ellipse
+                          cx="32"
+                          cy="37.188"
+                          rx="32"
+                          ry="26.839"
+                          style="fill: #88c057"
+                        />
+                      </g>
+                    </g>
+                    <g id="Mouth">
+                      <g>
+                        <path
+                          d="M32,47.51c-8.837,0-16-1.356-16,2.064s7.163,6.193,16,6.193c8.836,0,16-2.772,16-6.193    S40.836,47.51,32,47.51z"
+                          style="fill: #638c3f"
+                        />
+                      </g>
+                    </g>
+                    <g id="Eye_balls">
+                      <g>
+                        <path
+                          d="M12,26.864c-3.313,0-6,2.773-6,6.193    c0,3.421,2.687,6.194,6,6.194s6-2.773,6-6.194C18,29.638,15.313,26.864,12,26.864z M52,26.864c-3.313,0-6,2.773-6,6.193    c0,3.421,2.687,6.194,6,6.194s6-2.773,6-6.194C58,29.638,55.313,26.864,52,26.864z"
+                          style="
+                            fill-rule: evenodd;
+                            clip-rule: evenodd;
+                            fill: #ffffff;
+                          "
+                        />
+                      </g>
+                    </g>
+                    <g id="Eyes_1_">
+                      <g>
+                        <path
+                          d="M14,30.994c-1.104,0-2,0.924-2,2.063    c0,1.141,0.896,2.065,2,2.065s2-0.925,2-2.065C16,31.918,15.104,30.994,14,30.994z M54,30.994c-1.104,0-2,0.924-2,2.063    c0,1.141,0.896,2.065,2,2.065s2-0.925,2-2.065C56,31.918,55.104,30.994,54,30.994z"
+                          style="
+                            fill-rule: evenodd;
+                            clip-rule: evenodd;
+                            fill: #4d4d4d;
+                          "
+                        />
+                      </g>
+                    </g>
+                    <g id="Nose">
+                      <g>
+                        <ellipse
+                          cx="32"
+                          cy="39.251"
+                          rx="14"
+                          ry="12.387"
+                          style="fill: #abf26d"
+                        />
+                      </g>
+                    </g>
+                    <g id="Nose_Holes">
+                      <g>
+                        <path
+                          d="M26,35.123c-1.104,0-2,1.849-2,4.129s0.896,4.129,2,4.129    s2-1.849,2-4.129S27.104,35.123,26,35.123z M38,35.123c-1.104,0-2,1.849-2,4.129s0.896,4.129,2,4.129s2-1.849,2-4.129    S39.104,35.123,38,35.123z"
+                          style="
+                            fill-rule: evenodd;
+                            clip-rule: evenodd;
+                            fill: #3f5928;
+                          "
+                        />
+                      </g>
+                    </g>
+                    <g id="Eyebrows">
+                      <g>
+                        <path
+                          d="M16,18.606H8c-1.104,0-2,0.925-2,2.064    c0,1.141,0.896,2.064,2,2.064h8c1.104,0,2-0.924,2-2.064C18,19.531,17.104,18.606,16,18.606z M56,18.606h-8    c-1.104,0-2,0.925-2,2.064c0,1.141,0.896,2.064,2,2.064h8c1.104,0,2-0.924,2-2.064C58,19.531,57.104,18.606,56,18.606z"
+                          style="
+                            fill-rule: evenodd;
+                            clip-rule: evenodd;
+                            fill: #638c3f;
+                          "
+                        />
+                      </g>
+                    </g>
+                    <g />
+                    <g />
+                    <g />
+                    <g />
+                    <g />
+                    <g />
+                    <g />
+                    <g />
+                    <g />
+                    <g />
+                    <g />
+                    <g />
+                    <g />
+                    <g />
+                    <g />
+                  </svg>
+                </svg>
+              </div>
+              <span class="reaction-count">0</span>
+              <p class="reaction-text h">NO Like</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex flex-col w-80 mt-10 sm:mt-0 sm:w-1/3 space-y-4">
+        <div class="bg-white shadow-md shadow-blueee f rounded p-4">
+          <div class="flex items-center mb-2">
+            <svg
+              class="h-6 w-6 mr-3"
+              height="512px"
+              style="enable-background: new 0 0 512 512"
+              version="1.1"
+              viewBox="0 0 512 512"
+              width="512px"
+              xml:space="preserve"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+            >
+              <g id="_x31_3-whatsapp">
+                <g>
+                  <g>
+                    <path
+                      d="M256.063,16.75h-0.125C124.379,16.75,17.397,124.051,17.397,256     c0,52.336,16.819,100.848,45.422,140.232l-29.732,88.873l91.716-29.394c37.725,25.063,82.731,39.538,131.26,39.538     c131.559,0,238.541-107.335,238.541-239.25C494.604,124.083,387.621,16.75,256.063,16.75L256.063,16.75z M256.063,16.75"
+                      style="fill: #5acf5f"
+                    />
+                    <path
+                      d="M394.896,354.596c-5.758,16.304-28.604,29.817-46.824,33.771     c-12.473,2.657-28.754,4.785-83.568-18.006c-70.125-29.127-115.28-100.575-118.795-105.21     c-3.375-4.637-28.336-37.827-28.336-72.165c0-34.331,17.386-51.052,24.398-58.223c5.751-5.897,15.267-8.583,24.394-8.583     c2.954,0,5.606,0.146,7.997,0.267c7.008,0.302,10.524,0.717,15.151,11.813c5.756,13.909,19.77,48.239,21.445,51.771     c1.701,3.53,3.396,8.311,1.012,12.945c-2.24,4.788-4.205,6.91-7.725,10.975c-3.521,4.073-6.865,7.182-10.381,11.544     c-3.219,3.798-6.859,7.867-2.801,14.896c4.055,6.879,18.07,29.812,38.707,48.235c26.641,23.775,48.229,31.372,55.957,34.604     c5.756,2.395,12.615,1.822,16.816-2.663c5.34-5.774,11.938-15.342,18.645-24.759c4.771-6.76,10.795-7.599,17.119-5.208     c6.441,2.244,40.531,19.143,47.541,22.641c7.006,3.529,11.635,5.203,13.334,8.165     C400.652,324.361,400.652,338.271,394.896,354.596L394.896,354.596z M394.896,354.596"
+                      style="fill: #fcfcfc"
+                    />
+                  </g>
+                </g>
+              </g>
+              <g id="Layer_1" />
+            </svg>
+
+            <h2 class="font-bold text-grey-900 text-lg sm:text-xl md:text-2xl">
+              WhatsApp
+            </h2>
+          </div>
+          <p class="text-grey-300 font-sinica ml-5 font-bold">- 085362695904</p>
+        </div>
+
+        <div class="bg-white shadow-md shadow-blueee f rounded p-4">
+          <div class="flex items-center mb-2">
+            <svg
+              class="h-6 w-6 mr-3"
+              id="Layer_1"
+              style="enable-background: new 0 0 512 512"
+              version="1.1"
+              viewBox="0 0 512 512"
+              xml:space="preserve"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+            >
+              <g>
+                <polygon
+                  points="484.973,122.808 452.288,451.017 59.712,451.017 33.379,129.16 256,253.802  "
+                  style="fill: #f2f2f2"
+                />
+                <polygon
+                  points="473.886,60.983 256,265.659 38.114,60.983 256,60.983  "
+                  style="fill: #f2f2f2"
+                />
+              </g>
+              <path
+                d="M59.712,155.493v295.524H24.139C10.812,451.017,0,440.206,0,426.878V111.967l39,1.063L59.712,155.493  z"
+                style="fill: #f14336"
+              />
+              <path
+                d="M512,111.967v314.912c0,13.327-10.812,24.139-24.152,24.139h-35.56V155.493l19.692-46.525  L512,111.967z"
+                style="fill: #d32e2a"
+              />
+              <path
+                d="M512,85.122v26.845l-59.712,43.526L256,298.561L59.712,155.493L0,111.967V85.122  c0-13.327,10.812-24.139,24.139-24.139h13.975L256,219.792L473.886,60.983h13.962C501.188,60.983,512,71.794,512,85.122z"
+                style="fill: #f14336"
+              />
+              <polygon
+                points="59.712,155.493 0,146.235 0,111.967 "
+                style="fill: #d32e2a"
+              />
+              <g />
+              <g />
+              <g />
+              <g />
+              <g />
+              <g />
+              <g />
+              <g />
+              <g />
+              <g />
+              <g />
+              <g />
+              <g />
+              <g />
+              <g />
+            </svg>
+            <h2
+              class="font-bold text-gray-900 text-lg sm:text-xl md:text-2xl h"
+            >
+              Gmail
+            </h2>
+          </div>
+          <p class="text-grey-300 font-sinica ml-5 font-bold">
+            - karimsimarmata00@gmail.com
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="max-w-3xl mx-auto p-4">
+      <h2 class="text-2xl font-bold mb-4">Komentar</h2>
+
+      <div id="comment-form" class="mb-8">
+        <input
+          id="name-input"
+          class="w-full p-2 my-5 mb-2 shadow-md shadow-blueee font-sinica border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 capitalize f h"
+          type="text"
+          placeholder="Nama Anda"
+        />
+        <input
+          id="email-input"
+          class="w-full p-2 my-5 mb-2 shadow-md shadow-blueee font-sinica border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 capitalize f h"
+          type="email"
+          placeholder="Email Anda"
+        />
+        <textarea
+          id="comment-input"
+          class="w-full p-2 my-5 mb-2 shadow-md shadow-blueee font-sinica border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 capitalize f h"
+          rows="4"
+          placeholder="Tulis komentar Anda di sini..."
+        ></textarea>
+        <button
+          id="submit-comment"
+          class="w-full inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-lg font-medium rounded-md text-white bg-blueee hover:opacity-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+        >
+          Kirim Komentar
+        </button>
+      </div>
+
+      <div id="comments-container">
+        <!-- Komentar akan ditambahkan di sini -->
+      </div>
+    </div>
+
+    <!-- Section Scroll to top -->
+    <button
+      id="scrollToTopBtn"
+      class="fixed bottom-4 right-4 bg-blue-500 text-white px-4 py-2 rounded-lg shadow-md flex items-center space-x-2 sm:bottom-8 sm:right-8 sm:px-4 sm:py-1 opacity-0 transition-opacity duration-500"
+    >
+      <svg
+        viewBox="0 0 400 400"
+        xmlns="http://www.w3.org/2000/svg"
+        class="w-10 h-10 hover:scale-125 transition-transform duration-500"
+      >
+        <g data-name="Layer 11" id="Layer_11">
+          <path
+            fill="white"
+            d="M298.5,346.26h-197c-19.3,0-35-12.56-35-28s15.7-28,35-28h197c19.3,0,35,12.56,35,28S317.8,346.26,298.5,346.26Zm-197-46c-13.55,0-25,8.24-25,18s11.45,18,25,18h197c13.55,0,25-8.25,25-18s-11.45-18-25-18Z"
+          />
+          <path
+            fill="white"
+            d="M204.39,271.26H192.61a35,35,0,0,1-35-35v-64.4a5.8,5.8,0,0,0-5.79-5.79H135.5c-13.5,0-18.44-6.09-20.18-9.72s-3.41-11.28,5-21.82l55.48-69.26c6-7.43,14-11.53,22.66-11.53s16.7,4.1,22.66,11.53l55.48,69.26c8.45,10.54,6.79,18.2,5,21.82s-6.68,9.72-20.18,9.72H245.18a5.8,5.8,0,0,0-5.79,5.79v64.4A35,35,0,0,1,204.39,271.26ZM198.5,63.74c-5.56,0-10.83,2.77-14.86,7.79l-55.48,69.25c-3.61,4.51-5,8.71-3.83,11.24s5.39,4,11.17,4h16.32a15.81,15.81,0,0,1,15.79,15.79v64.4a25,25,0,0,0,25,25h11.78a25,25,0,0,0,25-25v-64.4a15.81,15.81,0,0,1,15.79-15.79H261.5c5.78,0,10-1.51,11.17-4s-.22-6.73-3.83-11.24L213.36,71.53C209.33,66.51,204.06,63.74,198.5,63.74Z"
+          />
+        </g>
+      </svg>
+    </button>
+
+    <!-- Section Massege Akhir -->
+
+    <!-- section footer-->
+    <div class="footer h-80 sm:h-[500px] lg:h-96 bg-white" id="header">
+      <div class="btn-footer">
+        <h1 class="judul1 mt-5 lg:mt-0">
+          <a href="home.html"
+            ><i class="fas fa-atom"></i><b>SX</b>iimart.<span>com</span></a
+          >
+        </h1>
+        <p class="media font-sinica text-white">
+          Sebuah media hanya untuk memperdalam IT, edukasi, dan untuk<br />pemberitahuan
+          tentang alam, pemikiran dan lain sebagainya.
+        </p>
+        <p class="social-media font-sinica text-white">My Social media</p>
+        <div class="menu3">
+          <div class="icon">
+            <a href="https://web.facebook.com/saragih.simarmata.169/"
+              ><i
+                class="fab fa-facebook transform transition-transform duration-300 hover:scale-125 hover:shadow-fb"
+              ></i
+            ></a>
+          </div>
+          <div class="icon1">
+            <a href="https://wa.me/6285362695904"
+              ><i
+                class="fab fa-whatsapp transform transition-transform duration-300 hover:scale-125 hover:shadow-fb"
+              ></i
+            ></a>
+          </div>
+          <div class="icon2">
+            <a href="https://twitter.com/KarimSimarmata"
+              ><i
+                class="fab fa-twitter transform transition-transform duration-300 hover:scale-125 hover:shadow-fb"
+              ></i
+            ></a>
+          </div>
+          <div class="icon3">
+            <a href="https://www.instagram.com/___rimms/"
+              ><i
+                class="fab fa-instagram transform transition-transform duration-300 hover:scale-125 hover:shadow-fb"
+              ></i
+            ></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="btn-footer1">
+        <div class="forme">
+          <h1 class="tentang text-white">First time Blogspot</h1>
+          <ul>
+            <li>
+              <a href="mindset.html" class="font-sinica text-white">Mindset </a>
+            </li>
+            <li>
+              <a href="tentang-alam.html" class="font-sinica text-white"
+                >Tentang alam</a
+              >
+            </li>
+            <li>
+              <a href="perjalanan-hidup.html" class="font-sinica text-white"
+                >Perjalanan hidup</a
+              >
+            </li>
+            <li>
+              <a href="motivasi-diri.html" class="font-sinica text-white"
+                >Motivasi diri</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div id="header" class="footer1 -mt-5">
+      <p><a href="about-me.html">TENTANG SAYA</a></p>
+      <p><a href="privasi.html">KEBIKAJAN PRIVASI DAN COOKIE PENGGUNA</a></p>
+      <p><a href="contact.html">KONTAK SAYA</a></p>
+      <p><a href="redaksi.html">REDAKSI</a></p>
+      <p><a href="blog.html">BLOGSPOT</a></p>
+    </div>
+    <div id="header" class="lastcopy -mt-2 border-none">
+      <p class="copyright">&copy;2024 - Sxiimart.com // All Rights Reserved.</p>
+    </div>
+
+    <!-- section footer-->
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <!-- More sections can be added here -->
+    <!-- Tautan ke file JavaScript Slick -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+
+    <script src="script.js"></script>
+  </body>
+</html>

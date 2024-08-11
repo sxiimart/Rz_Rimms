@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Firebase Integration</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+  </head>
+  <body>
+    <!-- Your content here -->
+    <div data-article-id="0">
+      <div class="reaction" data-reaction="cool">
+        <span class="reaction-count">0</span> Cool
+      </div>
+      <div class="reaction" data-reaction="wow">
+        <span class="reaction-count">0</span> Wow
+      </div>
+      <div class="reaction" data-reaction="like">
+        <span class="reaction-count">0</span> Like
+      </div>
+      <div class="reaction" data-reaction="no_like">
+        <span class="reaction-count">0</span> No Like
+      </div>
+    </div>
+
+    <!-- Comment Section -->
+    <div>
+      <input type="hidden" id="article-id" value="0" />
+      <!-- Set article ID manually -->
+      <input type="text" id="name-input" placeholder="Your Name" />
+      <input type="email" id="email-input" placeholder="Your Email" />
+      <textarea id="comment-input" placeholder="Your Comment"></textarea>
+      <button id="submit-comment">Submit Comment</button>
+    </div>
+
+    <div id="comments-container"></div>
+
+    <script type="module">
+      // Import Firebase SDK
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-app.js";
+      import {
+        getDatabase,
+        ref,
+        onValue,
+        runTransaction,
+        push,
+        onChildAdded,
+        query,
+        orderByChild,
+      } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-database.js";
+
+      // Firebase configuration for reactions
+      const firebaseConfigReactions = {
+        apiKey: "AIzaSyCcAKdr36yBLXsxUhh-80aLlaKFdTPQmQg",
+        authDomain: "reaction-49f20.firebaseapp.com",
+        projectId: "reaction-49f20",
+        storageBucket: "reaction-49f20.appspot.com",
+        messagingSenderId: "900949471094",
+        appId: "1:900949471094:web:daacd8587ff78607a19457",
+        measurementId: "G-18R27XYQJQ",
+      };
+
+      // Firebase configuration for comments
+      const firebaseConfigComments = {
+        apiKey: "AIzaSyBdSlCBmsD9gCrOKQZl0WtCubwUjgSlTS0",
+        authDomain: "komentar-b407d.firebaseapp.com",
+        databaseURL: "https://komentar-b407d-default-rtdb.firebaseio.com",
+        projectId: "komentar-b407d",
+        storageBucket: "komentar-b407d.appspot.com",
+        messagingSenderId: "368560886850",
+        appId: "1:368560886850:web:0e69e6cc105ec162b8c9db",
+        measurementId: "G-DPD22B3N1N",
+      };
+
+      // Initialize Firebase apps
+      const appReactions = initializeApp(
+        firebaseConfigReactions,
+        "appReactions"
+      );
+      const appComments = initializeApp(firebaseConfigComments, "appComments");
+
+      const dbReactions = getDatabase(appReactions);
+      const dbComments = getDatabase(appComments);
+
+      // Handling Reactions
+      document.addEventListener("DOMContentLoaded", function () {
+        const articleId = document.getElementById("article-id").value;
+        const reactionContainer = document.querySelector(
+          "[data-article-id='" + articleId + "']"
+        );
+
+        if (reactionContainer) {
+          const reactionElements =
+            reactionContainer.querySelectorAll(".reaction");
+
+          reactionElements.forEach(function (element) {
+            const reactionName = element.getAttribute("data-reaction");
+            const reactionCountElement =
+              element.querySelector(".reaction-count");
+
+            // Validasi reaksi
+            const validReactions = ["cool", "wow", "like", "no_like"];
+            if (!validReactions.includes(reactionName)) {
+              console.error(`Invalid reaction name: ${reactionName}`);
+              return;
+            }
+
+            // Fetch initial count from Firebase
+            const reactionRef = ref(
+              dbReactions,
+              `articles/${articleId}/reactions/${reactionName}`
+            );
+            onValue(reactionRef, (snapshot) => {
+              const count = snapshot.val() || 0;
+              reactionCountElement.textContent = count;
+            });
+
+            element.addEventListener("click", function () {
+              const userReactedKey = `${articleId}_${reactionName}_user_reacted`;
+              let hasReacted =
+                sessionStorage.getItem(userReactedKey) === "true";
+
+              runTransaction(reactionRef, (currentCount) => {
+                if (currentCount === null) {
+                  currentCount = 0; // Pastikan tidak ada nilai null
+                }
+
+                if (hasReacted) {
+                  sessionStorage.removeItem(userReactedKey);
+                  return Math.max(currentCount - 1, 0); // Pastikan nilai tidak negatif
+                } else {
+                  sessionStorage.setItem(userReactedKey, "true");
+                  return currentCount + 1;
+                }
+              }).catch((error) => {
+                console.error("Transaction failed:", error);
+              });
+            });
+          });
+        }
+      });
+
+      // Handling Comments
+      document.addEventListener("DOMContentLoaded", () => {
+        const nameInput = document.getElementById("name-input");
+        const emailInput = document.getElementById("email-input");
+        const commentInput = document.getElementById("comment-input");
+        const submitButton = document.getElementById("submit-comment");
+        const commentsContainer = document.getElementById("comments-container");
+
+        const articleId = document.getElementById("article-id").value;
+
+        if (!articleId) {
+          Swal.fire({
+            icon: "error",
+            title: "Error!",
+            text: "ID artikel tidak ketemu.",
+          });
+          return;
+        }
+
+        function tambahKomentarKeDOM(comment) {
+          const commentElement = document.createElement("div");
+          commentElement.className =
+            "bg-white p-4 rounded-md shadow-md mb-4 relative";
+          commentElement.innerHTML = `
+        <div class="flex items-center mb-2">
+          <img src="${
+            comment.avatar
+          }" alt="Profile" class="w-10 h-10 rounded-full mr-3">
+          <div>
+            <h3 class="font-semibold">${comment.name}</h3>
+            <p class="text-sm text-gray-500">${formatTimestamp(
+              comment.timestamp
+            )}</p>
+          </div>
+        </div>
+        <p>${comment.text}</p>
+      `;
+          // Tambahkan komentar baru ke atas
+          commentsContainer.prepend(commentElement);
+        }
+
+        function formatTimestamp(timestamp) {
+          const now = new Date().getTime();
+          const diff = now - timestamp;
+          const seconds = Math.floor(diff / 1000);
+          const minutes = Math.floor(seconds / 60);
+          const hours = Math.floor(minutes / 60);
+          const days = Math.floor(hours / 24);
+
+          if (seconds < 60) return "Baru saja";
+          if (minutes < 60) return `${minutes} menit yang lalu`;
+          if (hours < 24) return `${hours} jam yang lalu`;
+          return `${days} hari yang lalu`;
+        }
+
+        function generateAvatar(email) {
+          const hash = email.trim().toLowerCase();
+          return `https://api.multiavatar.com/${hash}.svg`;
+        }
+
+        submitButton.addEventListener("click", () => {
+          const name = nameInput.value.trim();
+          const email = emailInput.value.trim();
+          const commentText = commentInput.value.trim();
+
+          if (!name || !email || !commentText) {
+            Swal.fire({
+              icon: "error",
+              title: "Harap isi semua bidang.",
+              text: "Pastikan kamu mengisi nama, email, dan pesan.",
+            });
+            return;
+          }
+
+          if (
+            !/^[A-Za-z\s]{1,50}$/.test(name) ||
+            !/^.{1,500}$/.test(commentText)
+          ) {
+            Swal.fire({
+              icon: "error",
+              title: "Harap isi yang sesuai.",
+              text: "Nama hanya boleh berisi huruf dan spasi (maksimal 50 karakter). Pesan maksimal 500 karakter.",
+            });
+            return;
+          }
+
+          const emailRegex = /^[^\s@]+@(gmail\.com|yahoo\.com)$/i;
+          if (!emailRegex.test(email)) {
+            Swal.fire({
+              icon: "error",
+              title: "Email tidak valid.",
+              text: "Harap masukkan email yang valid (gmail.com atau yahoo.com).",
+            });
+            return;
+          }
+
+          const sanitizedComment = commentText
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;");
+          const avatar = generateAvatar(email);
+
+          const newComment = {
+            name: name,
+            email: email,
+            text: sanitizedComment,
+            timestamp: new Date().getTime(),
+            avatar: avatar,
+          };
+
+          const commentRef = ref(dbComments, `comments/${articleId}`);
+          push(commentRef, newComment)
+            .then(() => {
+              Swal.fire({
+                icon: "success",
+                title: "Berhasil!",
+                text: "Komentar kamu telah dikirim.",
+              });
+              nameInput.value = "";
+              emailInput.value = "";
+              commentInput.value = "";
+            })
+            .catch((error) => {
+              Swal.fire({
+                icon: "error",
+                title: "Gagal mengirim komentar.",
+                text: error.message,
+              });
+            });
+        });
+
+        const commentsRef = ref(dbComments, `comments/${articleId}`);
+        const commentsQuery = query(commentsRef, orderByChild("timestamp"));
+
+        onChildAdded(commentsQuery, (data) => {
+          const comment = data.val();
+          tambahKomentarKeDOM(comment);
+        });
+      });
+    </script>
+  </body>
+</html>

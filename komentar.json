@@ -1,0 +1,48 @@
+{
+  "articles": {
+    "article-1": {
+      "comments": {
+        "comment-1": {
+          "name": "",
+          "email": "",
+          "text": "",
+          "timestamp": 0,
+          "avatar": ""
+        }
+      }
+    },
+    "article-2": {
+      "comments": {
+        "comment-1": {
+          "name": "",
+          "email": "",
+          "text": "",
+          "timestamp": 0,
+          "avatar": ""
+        }
+      }
+    },
+    "article-3": {
+      "comments": {
+        "comment-1": {
+          "name": "",
+          "email": "",
+          "text": "",
+          "timestamp": 0,
+          "avatar": ""
+        }
+      }
+    },
+    "article-12": {
+      "comments": {
+        "comment-1": {
+          "name": "",
+          "email": "",
+          "text": "",
+          "timestamp": 0,
+          "avatar": ""
+        }
+      }
+    }
+  }
+}
