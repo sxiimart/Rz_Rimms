@@ -399,17 +399,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
 document.addEventListener("DOMContentLoaded", function() {
     const releaseDates = [
-        { id: 'release-date-text1', date: new Date('2024-07-15T08:10:00+07:00') },
-        { id: 'release-date-text2', date: new Date('2024-07-09T21:00:00+07:00') },
-        { id: 'release-date-text3', date: new Date('2024-07-09T21:00:00+07:00') },
-        { id: 'release-date-text4', date: new Date('2024-07-09T21:00:00+07:00') },
-        { id: 'release-date-text5', date: new Date('2024-07-09T21:00:00+07:00') },
-        { id: 'release-date-text6', date: new Date('2024-07-09T21:00:00+07:00') },
-        { id: 'release-date-text7', date: new Date('2024-07-09T21:00:00+07:00') },
-        { id: 'release-date-text8', date: new Date('2024-07-09T21:00:00+07:00') },
-        { id: 'release-date-text9', date: new Date('2024-07-09T21:00:00+07:00') },
-        { id: 'release-date-text10', date: new Date('2024-07-09T21:00:00+07:00') },
-        { id: 'release-date-text11', date: new Date('2024-07-09T21:00:00+07:00') },
+        { id: 'release-date-text1', date: new Date('2024-08-12T00:10:00+07:00') },
+        { id: 'release-date-text2', date: new Date('2024-08-12T00:00:00+07:00') },
+        { id: 'release-date-text3', date: new Date('2024-08-12T00:00:00+07:00') },
+        { id: 'release-date-text4', date: new Date('2024-08-12T00:00:00+07:00') },
+        { id: 'release-date-text5', date: new Date('2024-08-12T00:00:00+07:00') },
+        { id: 'release-date-text6', date: new Date('2024-08-12T00:00:00+07:00') },
+        { id: 'release-date-text7', date: new Date('2024-08-12T00:00:00+07:00') },
+        { id: 'release-date-text8', date: new Date('2024-08-12T00:00:00+07:00') },
+        { id: 'release-date-text9', date: new Date('2024-08-12T00:00:00+07:00') },
+        { id: 'release-date-text10', date: new Date('2024-08-12T00:00:00+07:00') },
+        { id: 'release-date-text11', date: new Date('2024-08-12T00:00:00+07:00') },
     ];
 
     releaseDates.forEach(item => {
