@@ -293,19 +293,19 @@
           commentElement.className =
             "bg-white p-4 rounded-md shadow-md mb-4 relative f h";
           commentElement.innerHTML = `
-    <div class="flex items-center mb-2 f h">
-      <img src="${
-        comment.avatar
-      }" alt="Profile" class="w-10 h-10 rounded-full mr-3">
-      <div>
-        <h3 class="font-semibold f h">${comment.name}</h3>
-        <p class="text-sm text-gray-500 f h">${formatTimestamp(
-          comment.timestamp
-        )}</p>
-      </div>
-    </div>
-    <p class="f h">${comment.text}</p>
-  `;
+        <div class="flex items-center mb-2 f h">
+          <img src="${
+            comment.avatar
+          }" alt="Profile" class="w-10 h-10 rounded-full mr-3 f h">
+          <div>
+            <h3 class=" f h font-sinica">${comment.name}</h3>
+            <p class="text-sm text-gray-500 f h font-sinica">${formatTimestamp(
+              comment.timestamp
+            )}</p>
+          </div>
+        </div>
+        <p class="f h font-sinica">${comment.text}</p>
+      `;
           // Tambahkan komentar baru ke atas
           commentsContainer.prepend(commentElement);
         }
@@ -695,7 +695,7 @@
             <p
               class="text-xs text-gray-500 font-sinica mb-10 h capitalize font-bold"
             >
-              " 19 Juli 2024 author --
+              " 12 Agustus 2024 author --
               <i
                 ><span class="font-arial text-xs text-blueee font-black"
                   >Karim Saragih Simarmata
