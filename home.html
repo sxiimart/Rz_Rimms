@@ -300,13 +300,13 @@
             comment.avatar
           }" alt="Profile" class="w-10 h-10 rounded-full mr-3 f h">
           <div>
-            <h3 class="font-semibold f h">${comment.name}</h3>
-            <p class="text-sm text-gray-500 f h">${formatTimestamp(
+            <h3 class=" f h font-sinica">${comment.name}</h3>
+            <p class="text-sm text-gray-500 f h font-sinica">${formatTimestamp(
               comment.timestamp
             )}</p>
           </div>
         </div>
-        <p class="f h'">${comment.text}</p>
+        <p class="f h font-sinica">${comment.text}</p>
       `;
           // Tambahkan komentar baru ke atas
           commentsContainer.prepend(commentElement);
@@ -633,7 +633,7 @@
           >
             <b
               id=""
-              class="text-lg font-pop bg-gradient-to-t from-biruu to-blueee bg-clip-text text-transparent assemble-animation dark:text-blueee"
+              class="text-lg font-pop bg-gradient-to-t from-biruu to-blueee bg-clip-text text-transparent assemble-animation dark:text-blue-300"
               >Hallo Semuanya🖐✋, Saya</b
             >
             <span
@@ -765,7 +765,7 @@
         </div>
 
         <div
-          class="lg:w-1/2 w-full p-6 order-1 sm:order-2 sm:text-center lg:text-start text-start"
+          class="lg:w-1/2 w-full p-6 order-1 sm:order-2 sm:text-center lg:text-start text-start cc"
           data-aos="fade-left"
         >
           <h1
@@ -775,7 +775,7 @@
           </h1>
 
           <h2
-            class="text-sm font-sinica text-slate-500 mb-3 text-center sm:text-left -mt-7"
+            class="text-sm font-sinica text-slate-500 mb-3 text-center sm:text-left -mt-7 h"
           >
             @Front end Development
           </h2>
@@ -2186,7 +2186,7 @@
         </button>
       </div>
 
-      <div id="comments-container">
+      <div class="font-sinica" id="comments-container">
         <!-- Komentar akan ditambahkan di sini -->
       </div>
     </div>
